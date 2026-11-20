@@ -1,0 +1,3504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>75th Miss Universe — Score Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          },
+          colors: {
+            stagevoid: '#05060F',
+            stageabyss: '#0B0F23',
+            stageglass: '#131A38',
+            sapphire: '#1B3B8C',
+            cobalt: '#2563EB',
+            cyanbeam: '#67E8F9',
+            icebeam: '#F5F3FF',
+            silvermist: '#FAF9FF',
+            mutedslate: '#B4C0E0',
+            orchidglow: '#E879F9',
+            roseglass: '#FDA4AF',
+            solargold: '#F5C451',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #05060F;
+      background-image:
+        radial-gradient(ellipse 90% 45% at 50% -8%, rgba(224, 242, 254, 0.22) 0%, rgba(165, 243, 252, 0.12) 34%, transparent 72%),
+        radial-gradient(circle at 12% 22%, rgba(232, 121, 249, 0.18) 0%, transparent 46%),
+        radial-gradient(circle at 88% 18%, rgba(245, 196, 81, 0.16) 0%, transparent 44%),
+        radial-gradient(circle at 50% 82%, rgba(56, 189, 248, 0.14) 0%, transparent 55%),
+        linear-gradient(180deg, #05060F 0%, #0A0E20 50%, #05060F 100%);
+      background-attachment: fixed;
+      color: #FAF9FF;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.5;
+      letter-spacing: -0.005em;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+      line-height: 1.18;
+    }
+
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Luxury Diamond Lattice & Starlight Backdrop */
+    #missUniverseStageBackdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    #missUniverseStageBackdrop.dimmed {
+      opacity: 0.24;
+    }
+
+    .diamond-caustics {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+        linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
+        linear-gradient(30deg, rgba(245, 196, 81, 0.035) 12%, transparent 12.5%, transparent 87%, rgba(245, 196, 81, 0.035) 87.5%, rgba(245, 196, 81, 0.035)),
+        linear-gradient(150deg, rgba(103, 232, 249, 0.035) 12%, transparent 12.5%, transparent 87%, rgba(103, 232, 249, 0.035) 87.5%, rgba(103, 232, 249, 0.035));
+      background-size: 84px 147px;
+      background-position: 0 0, 0 0, 42px 73.5px, 42px 73.5px;
+      mask-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 75%, transparent 100%);
+      -webkit-mask-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.25) 75%, transparent 100%);
+    }
+
+    /* Scenic Puerto Rico beach backdrop layer behind the delegates roster */
+    #puertoRicoBeachBackdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+
+    #puertoRicoBeachBackdrop.active {
+      opacity: 0.42;
+    }
+
+    #puertoRicoBeachBackdropImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 62%;
+      filter: contrast(1.08) saturate(1.16) brightness(0.74);
+    }
+
+    #puertoRicoBeachSpotlights {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 24%, rgba(224, 242, 254, 0.16) 0%, rgba(5, 6, 15, 0.74) 72%, rgba(5, 6, 15, 0.94) 100%),
+        linear-gradient(180deg, rgba(5, 6, 15, 0.74) 0%, rgba(5, 6, 15, 0.48) 50%, rgba(5, 6, 15, 0.9) 100%);
+    }
+
+    /* Full-bleed country flag backdrop with theatrical spotlights when viewing a candidate */
+    #delegateFlagBackdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+
+    #delegateFlagBackdrop.active {
+      opacity: 1;
+    }
+
+    #delegateFlagBackdropImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(1.08) saturate(1.12);
+    }
+
+    #delegateFlagSpotlights {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(122deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.06) 14%, transparent 28%),
+        linear-gradient(235deg, rgba(245, 196, 81, 0.16) 0%, transparent 32%),
+        radial-gradient(circle at 50% 34%, rgba(5, 6, 15, 0.14) 0%, rgba(5, 6, 15, 0.64) 72%, rgba(5, 6, 15, 0.86) 100%),
+        linear-gradient(180deg, rgba(5, 6, 15, 0.5) 0%, rgba(5, 6, 15, 0.28) 48%, rgba(5, 6, 15, 0.8) 100%);
+    }
+
+    /* Official Miss Universe 75th brushstroke flag + lower name/country portrait card */
+    .mu75-poster-frame {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.14) 0%, rgba(16, 19, 28, 0.92) 68%, rgba(6, 7, 12, 0.99) 100%);
+    }
+
+    .mu75-poster-brushstroke {
+      position: absolute;
+      inset: 14% -8% 18% -8%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.72;
+      filter: saturate(1.22) contrast(1.08) blur(0.4px);
+      -webkit-mask-image:
+        radial-gradient(ellipse 68% 48% at 50% 50%, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 0.35) 78%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 90%, transparent 100%);
+      mask-image:
+        radial-gradient(ellipse 68% 48% at 50% 50%, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 0.35) 78%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.85) 90%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      transform: rotate(-5deg) scale(1.06);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .mu75-poster-portrait {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 16%;
+      filter: contrast(1.06) saturate(1.07) drop-shadow(0 10px 22px rgba(0, 0, 0, 0.75));
+      transition: transform 0.25s ease;
+    }
+
+    .mu75-poster-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 34%, transparent 46%, rgba(5, 6, 12, 0.72) 100%),
+        linear-gradient(180deg, rgba(5, 6, 12, 0.55) 0%, transparent 24%, transparent 56%, rgba(5, 6, 12, 0.94) 94%, rgba(5, 6, 12, 0.99) 100%);
+    }
+
+    .diamond-flag-fallback-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.22) 0%, rgba(15, 23, 48, 0.92) 72%, rgba(5, 7, 15, 0.98) 100%);
+      border: 1px solid rgba(253, 230, 138, 0.55);
+      box-shadow:
+        0 0 24px -6px rgba(103, 232, 249, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    /* Editorial Spotlight Stage for Individual Delegate Scoring Pages */
+    .delegate-spotlight-stage {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(245, 196, 81, 0.22) 0%, rgba(103, 232, 249, 0.1) 36%, transparent 68%),
+        linear-gradient(155deg, rgba(255, 255, 255, 0.12) 0%, rgba(15, 22, 48, 0.88) 44%, rgba(6, 9, 22, 0.95) 100%);
+      backdrop-filter: blur(22px) saturate(170%);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      box-shadow:
+        0 20px 48px -14px rgba(0, 0, 0, 0.88),
+        0 0 36px -10px rgba(245, 196, 81, 0.26),
+        inset 0 1.5px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .delegate-spotlight-stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255, 255, 255, 0.08) 22deg, transparent 44deg, rgba(245, 196, 81, 0.08) 68deg, transparent 92deg, rgba(103, 232, 249, 0.07) 118deg, transparent 145deg);
+      opacity: 0.9;
+    }
+
+    .round-score-pill {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(10, 14, 32, 0.85) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    /* Small country flags rendered as centered diamond emblems */
+    .liquid-flag-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.2rem !important;
+      height: 1.2rem !important;
+      padding: 0;
+      border-radius: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
+      background: rgba(19, 26, 56, 0.78);
+      flex: 0 0 1.2rem;
+      vertical-align: middle;
+      align-self: center;
+    }
+
+    .liquid-flag-pill img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Couture Diamond Glass Surfaces */
+    .stage-glass {
+      position: relative;
+      background: linear-gradient(148deg, rgba(255, 255, 255, 0.09) 0%, rgba(15, 22, 48, 0.86) 38%, rgba(9, 13, 30, 0.92) 100%);
+      backdrop-filter: blur(20px) saturate(165%);
+      -webkit-backdrop-filter: blur(20px) saturate(165%);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow:
+        0 14px 36px -12px rgba(0, 0, 0, 0.82),
+        0 0 0 1px rgba(224, 242, 254, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.34),
+        inset 0 -1px 0 rgba(245, 196, 81, 0.14);
+    }
+
+    .stage-glass::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          122deg,
+          rgba(255, 255, 255, 0.16) 0%,
+          rgba(224, 242, 254, 0.06) 22%,
+          transparent 44%,
+          rgba(245, 196, 81, 0.06) 78%,
+          rgba(255, 255, 255, 0.12) 100%
+        );
+    }
+
+    .stage-glass-facet {
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.07) 0%, rgba(12, 17, 38, 0.88) 100%);
+      backdrop-filter: blur(14px) saturate(150%);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .stage-glass-highlight {
+      position: relative;
+      background: linear-gradient(142deg, rgba(255, 255, 255, 0.15) 0%, rgba(23, 32, 68, 0.9) 48%, rgba(245, 196, 81, 0.14) 100%);
+      backdrop-filter: blur(22px) saturate(175%);
+      -webkit-backdrop-filter: blur(22px) saturate(175%);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      box-shadow:
+        0 0 32px -8px rgba(224, 242, 254, 0.28),
+        0 16px 40px -12px rgba(0, 0, 0, 0.85),
+        inset 0 1.5px 0 rgba(255, 255, 255, 0.48),
+        inset 0 0 24px -10px rgba(245, 196, 81, 0.22);
+    }
+
+    .diamond-shimmer-text {
+      background: linear-gradient(110deg, #FFFFFF 0%, #E0F2FE 28%, #FDE68A 52%, #FFFFFF 76%, #BAE6FD 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: diamondShimmerFlow 5.5s linear infinite;
+    }
+
+    @keyframes diamondShimmerFlow {
+      0% { background-position: 0% center; }
+      100% { background-position: 220% center; }
+    }
+
+    @keyframes movingCountryFlagGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .moving-country-name-gradient {
+      background-size: 240% 240% !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      color: transparent !important;
+      animation: movingCountryFlagGradient 4.5s ease-in-out infinite;
+    }
+
+    /* Shiny glints, starlight sparkles & sheen around cards and pages */
+    .shiny-sparkle-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 14% 22%, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(2.5px 2.5px at 82% 18%, rgba(253, 230, 138, 0.9), transparent),
+        radial-gradient(2px 2px at 68% 74%, rgba(186, 230, 253, 0.85), transparent),
+        radial-gradient(1.8px 1.8px at 26% 80%, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(2.2px 2.2px at 91% 54%, rgba(245, 196, 81, 0.85), transparent);
+      animation: sparklePulse 3.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes sparklePulse {
+      0% { opacity: 0.45; transform: scale(1); }
+      100% { opacity: 0.95; transform: scale(1.015); }
+    }
+
+    .shiny-sheen-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shiny-sheen-card::after {
+      content: '';
+      position: absolute;
+      top: -120%;
+      left: -65%;
+      width: 48%;
+      height: 320%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.04) 30%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(253, 230, 138, 0.16) 62%,
+        transparent 100%
+      );
+      transform: rotate(24deg);
+      animation: cardLightSweep 7.5s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes cardLightSweep {
+      0%, 72% { left: -65%; opacity: 0; }
+      78% { opacity: 1; }
+      96% { left: 135%; opacity: 0.85; }
+      100% { left: 135%; opacity: 0; }
+    }
+
+    .shiny-btn {
+      box-shadow:
+        0 0 18px -4px rgba(186, 230, 253, 0.55),
+        0 0 24px -8px rgba(245, 196, 81, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    .mu75-main-logo {
+      max-height: 2.35rem;
+      width: auto;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 0 12px rgba(255, 255, 255, 0.45))
+        drop-shadow(0 0 18px rgba(245, 196, 81, 0.35));
+      transition: transform 0.22s ease, filter 0.22s ease;
+    }
+
+    .mu75-main-logo:hover {
+      transform: scale(1.05);
+      filter:
+        drop-shadow(0 0 16px rgba(255, 255, 255, 0.65))
+        drop-shadow(0 0 24px rgba(245, 196, 81, 0.5));
+    }
+
+    @media (min-width: 640px) {
+      .mu75-main-logo {
+        max-height: 2.75rem;
+      }
+    }
+
+    .top-tab-pill {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .top-tab-pill::after {
+      content: '';
+      position: absolute;
+      top: -120%;
+      left: -85%;
+      width: 58%;
+      height: 340%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.14) 32%,
+        rgba(255, 255, 255, 0.72) 50%,
+        rgba(253, 230, 138, 0.45) 64%,
+        transparent 100%
+      );
+      transform: rotate(24deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .top-tab-pill:hover::after,
+    .top-tab-pill-active::after,
+    .top-tab-pill.diamond-nav-glint::after {
+      animation: tabDiamondShine 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes tabDiamondShine {
+      0% { left: -85%; opacity: 0; }
+      20% { opacity: 1; }
+      85% { left: 140%; opacity: 0.95; }
+      100% { left: 140%; opacity: 0; }
+    }
+
+    .top-tab-pill-active {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(37, 99, 235, 0.65) 52%, rgba(245, 196, 81, 0.28) 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(253, 230, 138, 0.7);
+      box-shadow:
+        0 0 18px -4px rgba(245, 196, 81, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    .top-tab-pill-idle {
+      background: rgba(12, 17, 38, 0.58);
+      color: #C7D2FE;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .top-tab-pill-idle:hover {
+      color: #FFFFFF;
+      border-color: rgba(186, 230, 253, 0.45);
+      background: rgba(25, 35, 72, 0.72);
+    }
+
+    .mobile-nav-menu-wrap { display: none; position: relative; flex: 0 0 auto; }
+    .mobile-nav-toggle {
+      display: inline-flex; align-items: center; justify-content: center; gap: .65rem;
+      min-height: 44px; padding: .62rem .9rem; border-radius: .85rem;
+      color: #F8FAFC; font: 650 .86rem/1 Inter, system-ui, sans-serif;
+      border: 1px solid rgba(203,213,225,.26);
+      background: linear-gradient(145deg, rgba(23,34,66,.96), rgba(8,13,29,.98));
+      box-shadow: 0 7px 22px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+      cursor: pointer; white-space: nowrap;
+    }
+    .mobile-nav-toggle:focus-visible, .mobile-nav-menu button:focus-visible { outline: 2px solid #F5C451; outline-offset: 3px; }
+    .mobile-nav-toggle-icon { width: 1.2rem; height: 1.2rem; color: #F5D77E; }
+    .mobile-nav-menu {
+      position: absolute; top: calc(100% + .65rem); right: 0; z-index: 80;
+      width: min(15.5rem, calc(100vw - 1.5rem)); padding: .45rem;
+      border: 1px solid rgba(245,196,81,.32); border-radius: 1rem;
+      background: rgba(7,12,29,.98); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .mobile-nav-menu button {
+      display: flex; width: 100%; align-items: center; justify-content: space-between;
+      min-height: 47px; padding: .72rem .85rem; border-radius: .7rem;
+      color: #DCE6FA; font: 600 .9rem/1.2 Inter, system-ui, sans-serif;
+      text-align: left; background: transparent; border: 1px solid transparent;
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .mobile-nav-menu button + button { margin-top: .15rem; }
+    .mobile-nav-menu button:hover, .mobile-nav-menu button.active {
+      color: #fff; border-color: rgba(245,196,81,.28);
+      background: linear-gradient(110deg, rgba(37,99,235,.36), rgba(245,196,81,.12));
+    }
+    .mobile-nav-menu-mark { color: #E7C66E; font-size: 1rem; opacity: .9; }
+
+
+
+    /* Responsive polish across phones, tablets, laptops and wide displays. */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body { min-width: 320px; overflow-x: hidden; }
+    main, header, footer, section, article, .stage-glass, .stage-glass-facet { min-width: 0; }
+    img { max-width: 100%; image-rendering: auto; }
+    #view-home img { display: block; }
+    #view-home .home-hero-crown-glow > .relative { height: clamp(11rem, 29vw, 20rem); }
+    #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div > div:first-child { aspect-ratio: 16 / 9; height: auto; }
+    #view-home .grid.grid-cols-1.sm\:grid-cols-3 img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    #view-home .home-hero-crown-glow > .relative img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+    #view-home .home-hero-crown-glow h2 { overflow-wrap: anywhere; }
+    button, input, select, textarea { max-width: 100%; }
+    .top-tab-pill { flex: 0 0 auto; }
+    @media (max-width: 767px) {
+      header nav[aria-label="Main sections"] { display: none !important; }
+      .mobile-nav-menu-wrap { display: block; margin-left: auto; }
+      header > div:first-child { padding-left: .75rem; padding-right: .75rem; }
+      header > div:first-child > .flex:first-child { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; gap: .55rem; }
+      header > div:first-child > .flex:first-child > button { grid-column: 1; grid-row: 1; }
+      header > div:first-child > .flex:first-child > div { grid-column: 2; grid-row: 1; width: 100%; min-width: 0; }
+      #nonHomeHeaderControls { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; flex-wrap: wrap; min-width: 0; }
+      #nonHomeHeaderControls > button, #nonHomeHeaderControls > div { min-height: 40px; }
+      main { width: 100%; max-width: 100%; padding-left: .65rem !important; padding-right: .65rem !important; padding-top: .8rem !important; }
+      #view-home .home-hero-crown-glow { border-radius: 1.15rem; }
+      #view-home .home-hero-crown-glow > .px-5 { padding-left: 1rem; padding-right: 1rem; }
+      #view-home .home-hero-crown-glow > .p-5 { padding: 1rem; }
+      #view-home .home-hero-crown-glow h2 { font-size: clamp(1.45rem, 6vw, 2.1rem); line-height: 1.12; }
+      #view-home .home-hero-crown-glow .font-editorial { font-size: 1.1rem; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div:last-child { grid-column: 1 / -1; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div .p-3 { padding: .7rem; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div .font-display { overflow-wrap: anywhere; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div p { line-height: 1.35; }
+      #view-top30, #view-share, #view-score { min-width: 0; }
+      .delegate-spotlight-stage { border-radius: 1rem; }
+    }
+    @media (max-width: 420px) {
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 { grid-template-columns: minmax(0, 1fr); }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div:last-child { grid-column: auto; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 > div > div:first-child { aspect-ratio: 16 / 8.5; }
+      #nonHomeHeaderControls { justify-content: flex-start; }
+      #nonHomeHeaderControls > button, #nonHomeHeaderControls > div { flex: 0 1 auto; }
+      .delegate-spotlight-stage .mu75-poster-frame { width: min(72vw, 14rem); height: auto; aspect-ratio: 2 / 3; }
+    }
+    @media (min-width: 768px) and (max-width: 1100px) {
+      main { padding-left: 1rem !important; padding-right: 1rem !important; }
+      #view-home .grid.grid-cols-1.sm\:grid-cols-3 { gap: .65rem; }
+    }
+    /* Mobile layout guardrails: prevent wide children, oversized controls and page drift. */
+    html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+    body { overscroll-behavior-x: none; }
+    main > section, main .stage-glass, main .stage-glass-highlight,
+    main .stage-glass-facet, #delegateScoringPageContent,
+    #watchPartyComparisonContainer { min-width: 0; max-width: 100%; }
+    main .grid, main .flex { min-width: 0; }
+    main img, main video, main canvas { max-width: 100%; }
+    main input:not([type="range"]), main select, main textarea { min-width: 0; }
+    button, select, input, textarea { touch-action: manipulation; }
+    button { min-height: 38px; }
+    #delegateScoringPageContent { touch-action: pan-y; }
+    #delegateScoringPageContent .delegate-spotlight-stage { max-width: 100%; }
+    #delegateScoringPageContent .mu75-poster-frame { max-width: 100%; }
+    @media (max-width: 767px) {
+      #nonHomeHeaderControls { gap: .4rem; }
+      #nonHomeHeaderControls > button { flex: 1 1 auto; justify-content: center; }
+      #nonHomeHeaderControls > div { flex: 0 0 auto; }
+      #view-delegate-score > .stage-glass:first-child { align-items: stretch; }
+      #view-delegate-score > .stage-glass:first-child > div { flex: 1 1 100%; justify-content: space-between; }
+      #view-delegate-score > .stage-glass:first-child button { min-height: 42px; }
+      #delegateScoringPageContent .delegate-spotlight-stage { padding: .9rem; gap: 1rem; }
+      #delegateScoringPageContent .grid { grid-template-columns: minmax(0,1fr); }
+      #delegateScoringPageContent input[type="range"] { width: 100%; min-height: 34px; }
+      #view-share .flex, #view-top30 .flex { flex-wrap: wrap; }
+      #view-share select, #view-share input { max-width: 100%; }
+      .stage-glass, .stage-glass-facet, .stage-glass-highlight { overflow-wrap: anywhere; }
+    }
+    @media (max-width: 380px) {
+      body { font-size: 14px; }
+      #nonHomeHeaderControls { justify-content: space-between; }
+      #nonHomeHeaderControls > button { padding-left: .55rem; padding-right: .55rem; }
+      #view-delegate-score > .stage-glass:first-child { padding: .55rem; }
+      #view-delegate-score > .stage-glass:first-child button { padding-left: .55rem; padding-right: .55rem; font-size: .68rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-10 text-silvermist">
+
+  <!-- Diamond Facet & Starlight Backdrop -->
+  <div id="missUniverseStageBackdrop" aria-hidden="true">
+    <img
+      id="missUniverseStageBackdropImg"
+      src="https://i.pinimg.com/1200x/50/69/8b/50698b8c2a5240dc8515b4fe575620ca.jpg"
+      alt=""
+      onerror="if(!this.dataset.fb1){this.dataset.fb1='1';this.src='https://i.pinimg.com/1200x/60/53/10/605310040542077239c302e7df2c41e3.jpg';}else if(!this.dataset.fb2){this.dataset.fb2='1';this.src='https://images.pexels.com/photos/20526453/pexels-photo-20526453.jpeg?auto=compress&cs=tinysrgb&w=1600';}else{this.onerror=null;this.src='https://placehold.co/1600x900/05060f/f5c451?text=Miss+Universe';}"
+      class="w-full h-full object-cover object-center opacity-55"
+    />
+    <div class="diamond-caustics"></div>
+    <div
+      style="position:absolute;inset:0;background:radial-gradient(circle at 50% 32%, rgba(224,242,254,0.16) 0%, rgba(5,6,15,0.68) 66%, rgba(5,6,15,0.94) 100%);"
+    ></div>
+  </div>
+  <div class="shiny-sparkle-layer" aria-hidden="true"></div>
+
+  <!-- Scenic Puerto Rico beach backdrop layer behind the delegates roster -->
+  <div id="puertoRicoBeachBackdrop" aria-hidden="true">
+    <img id="puertoRicoBeachBackdropImg" src="" alt="" />
+    <div id="puertoRicoBeachSpotlights"></div>
+  </div>
+
+  <!-- Full-bleed country flag backdrop for candidate scoring view -->
+  <div id="delegateFlagBackdrop" aria-hidden="true">
+    <img id="delegateFlagBackdropImg" src="" alt="" />
+    <div id="delegateFlagSpotlights"></div>
+  </div>
+
+  <!-- Top Sticky Diamond Glass Header -->
+  <header class="sticky top-0 z-30 bg-stagevoid/82 backdrop-blur-xl border-b border-white/15 shadow-2xl">
+    <div class="max-w-6xl mx-auto px-3 sm:px-5 py-2.5 space-y-2">
+      <div class="flex items-center justify-between gap-2.5">
+        <!-- Left: Unboxed Logo -->
+        <button
+          type="button"
+          onclick="openLogoModal()"
+          title="75th Miss Universe Official Emblem"
+          class="shrink-0 focus:outline-none active:scale-95 transition flex items-center"
+        >
+          <span id="headerLogoContainer" class="flex items-center">
+            <img
+              src="https://cdn.prod.website-files.com/6aecd8e1f2621e799a6c620b/6aecda23fe94bdfa486139dd_logo-mu75.webp"
+              alt="75th Miss Universe Official Logo"
+              class="mu75-main-logo"
+              onerror="this.outerHTML='<svg class=\\'w-8 h-8\\' viewBox=\\'0 0 80 80\\' fill=\\'none\\'><polygon points=\\'40,8 66,28 40,72 14,28\\' stroke=\\'#F5C451\\' stroke-width=\\'2.2\\' fill=\\'rgba(186,230,253,0.14)\\'/></svg>';"
+            />
+          </span>
+        </button>
+
+        <!-- Right: Top Navigation Tabs & Non-Home Controls -->
+        <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <nav aria-label="Main sections" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <button id="topTabBtn-home" type="button" onclick="switchView('home')" class="top-tab-pill top-tab-pill-active">
+              <span>Home</span>
+            </button>
+            <button id="topTabBtn-score" type="button" onclick="switchView('score')" class="top-tab-pill top-tab-pill-idle">
+              <span>Delegates</span>
+            </button>
+            <button id="topTabBtn-top30" type="button" onclick="switchView('top30')" class="top-tab-pill top-tab-pill-idle">
+              <span>Top 30</span>
+            </button>
+            <button id="topTabBtn-share" type="button" onclick="switchView('share')" class="top-tab-pill top-tab-pill-idle">
+              <span>Compare</span>
+            </button>
+          </nav>
+
+          <!-- Clean hamburger navigation for phones and small tablets -->
+          <div class="mobile-nav-menu-wrap">
+            <button id="mobileNavToggle" type="button" class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNavMenu" onclick="toggleMobileNavMenu()">
+              <span class="mobile-nav-toggle-label">Menu</span>
+              <svg class="mobile-nav-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div id="mobileNavMenu" class="mobile-nav-menu hidden" aria-label="Main navigation">
+              <button type="button" data-nav-view="home" onclick="switchView('home')"><span>Home</span><span class="mobile-nav-menu-mark">⌂</span></button>
+              <button type="button" data-nav-view="score" onclick="switchView('score')"><span>Delegates</span><span class="mobile-nav-menu-mark">✧</span></button>
+              <button type="button" data-nav-view="top30" onclick="switchView('top30')"><span>Top 30</span><span class="mobile-nav-menu-mark">№</span></button>
+              <button type="button" data-nav-view="share" onclick="switchView('share')"><span>Compare</span><span class="mobile-nav-menu-mark">⇄</span></button>
+            </div>
+          </div>
+
+          <!-- Save, Judge & Scored Pills (Hidden on Home tab) -->
+          <div id="nonHomeHeaderControls" class="hidden items-center gap-1.5 sm:gap-2 shrink-0">
+            <button
+              type="button"
+              onclick="saveScoresAndSyncCompare()"
+              title="Save your scores and sync automatically to Compare"
+              class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600/85 to-teal-700/85 hover:brightness-110 border border-emerald-200/45 text-emerald-50 text-xs transition active:scale-95 flex items-center gap-1.5"
+            >
+              <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                <polyline points="17 21 17 13 7 13 7 21" />
+                <polyline points="7 3 7 8 15 8" />
+              </svg>
+              <span class="hidden sm:inline">Save Scores</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="openJudgeModal()"
+              class="px-2.5 py-1.5 rounded-xl stage-glass-facet hover:border-solargold/60 text-left transition active:scale-95"
+            >
+              <div class="text-[10px] uppercase tracking-wider text-solargold leading-none">Judge</div>
+              <div id="headerJudgeName" class="text-xs text-silvermist font-semibold truncate max-w-[68px] sm:max-w-[115px] leading-snug mt-0.5">
+                Watch Party Judge
+              </div>
+            </button>
+
+            <div class="px-2.5 py-1.5 rounded-xl bg-gradient-to-br from-slate-800/90 via-sapphire/85 to-slate-900/95 border border-white/30 text-silvermist text-center shadow-md">
+              <div class="text-[10px] uppercase tracking-wider text-cyanbeam leading-none">Scored</div>
+              <div id="scoredProgressText" class="text-xs font-semibold leading-snug mt-0.5">0/116</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Bar (Shown on Delegates Tab) -->
+      <div id="scoreControlsBar" class="hidden mt-2.5 space-y-2">
+        <div class="relative">
+          <input
+            id="delegateSearchInput"
+            type="text"
+            oninput="handleSearchInput(this.value)"
+            placeholder="Search country, name, or #1–116..."
+            class="w-full stage-glass-facet focus:border-cyanbeam/70 rounded-xl pl-9 pr-9 py-2 text-sm text-silvermist placeholder-mutedslate focus:outline-none transition"
+          />
+          <svg class="w-4 h-4 text-cyanbeam absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <button
+            id="clearSearchBtn"
+            type="button"
+            onclick="clearSearchInput()"
+            class="hidden absolute right-2.5 top-2 text-xs text-mutedslate hover:text-silvermist px-1.5 py-0.5"
+            aria-label="Clear search"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5">
+          <button type="button" data-filter="all" onclick="setActiveFilter('all')" class="filter-chip px-3 py-1.5 rounded-full text-xs bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 whitespace-nowrap transition">
+            All (116)
+          </button>
+          <button type="button" data-filter="unscored" onclick="setActiveFilter('unscored')" class="filter-chip px-3 py-1.5 rounded-full text-xs stage-glass-facet text-mutedslate hover:text-silvermist whitespace-nowrap transition">
+            Unscored
+          </button>
+          <button type="button" data-filter="scored" onclick="setActiveFilter('scored')" class="filter-chip px-3 py-1.5 rounded-full text-xs stage-glass-facet text-mutedslate hover:text-silvermist whitespace-nowrap transition">
+            Scored
+          </button>
+          <button type="button" data-filter="top30" onclick="setActiveFilter('top30')" class="filter-chip px-3 py-1.5 rounded-full text-xs stage-glass-facet text-icebeam hover:border-solargold/60 whitespace-nowrap transition">
+            ◆ Top 30
+          </button>
+          <button type="button" data-filter="cut85" onclick="setActiveFilter('cut85')" class="filter-chip px-3 py-1.5 rounded-full text-xs stage-glass-facet text-cyanbeam hover:border-cyanbeam/60 whitespace-nowrap transition">
+            85+ Cut
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10 max-w-6xl mx-auto px-3 sm:px-5 lg:px-7 pt-4 sm:pt-5 space-y-4">
+
+    <!-- TAB 0: HOME OVERVIEW WITH MISS UNIVERSE IMAGERY -->
+    <section id="view-home" class="space-y-4">
+      <div class="stage-glass-highlight home-hero-crown-glow shiny-sheen-card rounded-3xl overflow-hidden">
+        <div class="relative h-48 sm:h-64 w-full overflow-hidden bg-stageabyss">
+          <img
+            src="https://entertainment.inquirer.net/files/2026/04/75th-MU-PR-2048x1114.jpg"
+            alt="75th Miss Universe Puerto Rico official showcase"
+            fetchpriority="high" decoding="async"
+            onerror="if(!this.dataset.fb1){this.dataset.fb1='1';this.src='https://media.philstar.com/photos/2025/12/12/miss-universe-2026_2025-12-12_11-03-03.jpg';}else{this.onerror=null;this.src='https://placehold.co/1200x600/0b0f23/f5c451?text=75th+Miss+Universe+Puerto+Rico';}"
+            class="w-full h-full object-cover object-center"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-stagevoid via-stagevoid/40 to-transparent"></div>
+        </div>
+
+        <div class="px-5 sm:px-7 pt-3 pb-4 border-b border-white/10 flex flex-wrap items-end justify-between gap-2">
+          <div>
+            <p class="font-editorial italic text-xl sm:text-2xl text-solargold">
+              Global Stage • Haute Couture • Crown
+            </p>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold diamond-shimmer-text">
+              Miss Universe Return to Puerto Rico
+            </h2>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-stagevoid/80 border border-white/25 text-xs text-cyanbeam font-medium">
+            San Juan, Puerto Rico
+          </span>
+        </div>
+
+        <div class="p-5 sm:p-7 space-y-5">
+          <p class="text-sm sm:text-base text-silvermist/95 leading-relaxed">
+            Welcome to the Miss Universe watch-party scorecard. Explore <strong>116 delegates</strong> from around the globe, score National Costume, Swimsuit, and Evening Gown rounds, track your <strong>Top 30</strong> picks, and compare scorecards with friends.
+          </p>
+
+          <!-- Miss Universe Visual Gallery Strip -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="stage-glass-facet rounded-2xl overflow-hidden group">
+              <div class="h-36 sm:h-40 overflow-hidden">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ba/b7/6d/old-san-juan-is-home.jpg?w=1400&h=-1&s=1"
+                  alt="Old San Juan Puerto Rico street and coastal view"
+                  loading="lazy" decoding="async"
+                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/131a38/67e8f9?text=San+Juan+Puerto+Rico';"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                />
+              </div>
+              <div class="p-3">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-cyanbeam">Host Destination</div>
+                <div class="font-display text-sm font-bold text-icebeam">San Juan, Puerto Rico</div>
+                <p class="text-xs text-mutedslate mt-0.5">Historic streets, coastal charm, and pageant energy.</p>
+              </div>
+            </div>
+
+            <div class="stage-glass-facet rounded-2xl overflow-hidden group">
+              <div class="h-36 sm:h-40 overflow-hidden">
+                <img
+                  src="https://media.philstar.com/photos/2025/12/12/miss-universe-2026_2025-12-12_11-03-03.jpg"
+                  alt="116 Miss Universe delegates spotlight"
+                  loading="lazy" decoding="async"
+                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/131a38/f5c451?text=116+Delegates';"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                />
+              </div>
+              <div class="p-3">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-cyanbeam">Runway &amp; Couture</div>
+                <div class="font-display text-sm font-bold text-icebeam">116 Global Delegates</div>
+                <p class="text-xs text-mutedslate mt-0.5">Costume (30), Swimsuit (35), and Evening Gown (35).</p>
+              </div>
+            </div>
+
+            <div class="stage-glass-facet rounded-2xl overflow-hidden group">
+              <div class="h-36 sm:h-40 overflow-hidden">
+                <img
+                  src="https://i.pinimg.com/1200x/60/53/10/605310040542077239c302e7df2c41e3.jpg"
+                  alt="Sparkling finale stage and crown lights"
+                  loading="lazy" decoding="async"
+                  onerror="this.onerror=null;this.src='https://placehold.co/600x400/131a38/e879f9?text=Top+30+Finale';"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                />
+              </div>
+              <div class="p-3">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-solargold">Semifinals</div>
+                <div class="font-display text-sm font-bold text-icebeam">Top 30 Leaderboard</div>
+                <p class="text-xs text-mutedslate mt-0.5">Automatic ranking with Evening Gown tiebreaker.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1 flex flex-wrap items-center gap-2.5">
+            <button
+              type="button"
+              onclick="switchView('score')"
+              class="shiny-btn px-5 py-3 rounded-xl bg-gradient-to-r from-cobalt via-sapphire to-indigo-900 hover:brightness-110 text-silvermist border border-white/45 text-sm font-bold shadow-lg transition active:scale-95"
+            >
+              Score Delegates →
+            </button>
+            <button
+              type="button"
+              onclick="switchView('top30')"
+              class="shiny-btn px-4 py-3 rounded-xl stage-glass-facet hover:border-solargold/60 text-icebeam text-xs sm:text-sm font-semibold transition active:scale-95 inline-flex items-center gap-1.5"
+            >
+              <svg class="w-4 h-4 shrink-0 text-solargold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 17.5L5.2 8.5L10 12.5L12 6.5L14 12.5L18.8 8.5L21 17.5H3Z" />
+                <line x1="4" y1="20.5" x2="20" y2="20.5" />
+              </svg>
+              <span>View Top 30</span>
+            </button>
+            <button
+              type="button"
+              onclick="switchView('share')"
+              class="shiny-btn px-4 py-3 rounded-xl stage-glass-facet hover:border-cyanbeam/60 text-silvermist text-xs sm:text-sm font-semibold transition active:scale-95 inline-flex items-center gap-1.5"
+            >
+              <svg class="w-4 h-4 shrink-0 text-cyanbeam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.5" y="4.5" width="6.5" height="15" rx="1.5" />
+                <rect x="14" y="4.5" width="6.5" height="15" rx="1.5" />
+                <path d="M10.5 9.5H13.5M10.5 14.5H13.5" />
+              </svg>
+              <span>Compare Scores</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1: SCORE DELEGATES -->
+    <section id="view-score" class="hidden space-y-3">
+      <!-- Streamlined Action Toolbar -->
+      <div class="stage-glass rounded-2xl px-3.5 py-2.5 flex items-center justify-between gap-2.5 text-xs">
+        <div class="min-w-0">
+          <div class="text-icebeam truncate">
+            Scale: <span class="text-solargold font-semibold">NC 30 + Swim 35 + Gown 35 = 100</span>
+          </div>
+          <div class="hidden sm:block text-xs text-mutedslate truncate mt-0.5">
+            Tap any delegate card to score • Saving automatically updates Compare
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button
+            type="button"
+            onclick="saveScoresAndSyncCompare()"
+            class="sm:hidden px-2.5 py-1.5 rounded-xl bg-emerald-600/80 text-emerald-50 border border-emerald-300/40 transition active:scale-95 whitespace-nowrap inline-flex items-center gap-1"
+          >
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+            </svg>
+            <span>Save</span>
+          </button>
+          <button
+            type="button"
+            onclick="openFirstDelegateScoring()"
+            class="px-3 py-1.5 rounded-xl stage-glass-facet hover:border-solargold/60 text-icebeam transition active:scale-95 whitespace-nowrap inline-flex items-center gap-1.5"
+          >
+            <svg class="w-3.5 h-3.5 shrink-0 text-solargold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 21 9 12 22 3 9" />
+            </svg>
+            <span>Scoring Page</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Delegate Cards Container -->
+      <div id="delegatesContainer" class="space-y-2.5"></div>
+
+      <!-- Empty Filter State -->
+      <div id="emptyDelegatesBox" class="hidden stage-glass rounded-2xl p-8 text-center">
+        <div class="text-2xl text-solargold mb-1.5">◆</div>
+        <h2 class="font-display text-base font-bold text-icebeam">No Matching Delegates</h2>
+        <p class="text-xs text-mutedslate mt-1">Adjust your search term or switch back to All (116).</p>
+        <button type="button" onclick="resetSearchAndFilter()" class="mt-3 px-4 py-2 rounded-xl bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/30 text-xs">
+          Show All 116 Delegates
+        </button>
+      </div>
+    </section>
+
+    <!-- DEDICATED CANDIDATE SCORING VIEW (Full-Bleed Flag Backdrop + Diamond Glass Cards) -->
+    <section id="view-delegate-score" class="hidden space-y-3">
+      <!-- Top Back & Prev/Next Delegate Bar -->
+      <div class="stage-glass rounded-2xl p-2.5 sm:p-3 flex items-center justify-between gap-2">
+        <button
+          type="button"
+          onclick="backToDelegatesList()"
+          class="px-3 py-1.5 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-icebeam text-xs transition active:scale-95 shrink-0"
+        >
+          ← Back
+        </button>
+
+        <div class="flex items-center gap-1.5 shrink-0 flex-wrap justify-end">
+          <button
+            type="button"
+            onclick="saveScoresAndSyncCompare()"
+            class="px-2.5 py-1.5 rounded-xl bg-emerald-600/80 hover:brightness-110 text-emerald-50 border border-emerald-300/40 text-xs transition active:scale-95 inline-flex items-center gap-1"
+          >
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+            </svg>
+            <span>Save</span>
+          </button>
+          <button
+            id="prevDelegateBtn"
+            type="button"
+            onclick="stepDelegateScoring(-1)"
+            class="px-2.5 py-1.5 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-silvermist text-xs transition active:scale-95"
+          >
+            ← Prev
+          </button>
+          <button
+            id="nextDelegateBtn"
+            type="button"
+            onclick="stepDelegateScoring(1)"
+            class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-cobalt to-sapphire hover:brightness-110 text-silvermist border border-white/35 text-xs transition active:scale-95"
+          >
+            Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- Dedicated Delegate Scoring Sheet Container -->
+      <div id="delegateScoringPageContent" class="space-y-3"></div>
+    </section>
+
+    <!-- TAB 2: TOP 30 LEADERBOARD & STANDOUTS -->
+    <section id="view-top30" class="hidden space-y-3.5">
+      <!-- Special Category Standouts -->
+      <div class="stage-glass rounded-2xl p-3.5 sm:p-4">
+        <div class="flex flex-wrap items-center justify-between gap-1 mb-2.5">
+          <h2 class="font-display text-sm sm:text-base font-bold text-icebeam">
+            ◆ SPECIAL CATEGORY STANDOUTS
+          </h2>
+          <span class="text-[11px] text-mutedslate">Auto-fills from top round score or pick manually</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <div class="stage-glass-facet rounded-xl p-2.5">
+            <label for="standoutCostumeSelect" class="block text-[10px] uppercase tracking-wider text-cyanbeam mb-1">
+              Best National Costume
+            </label>
+            <select id="standoutCostumeSelect" onchange="updateStandoutPick('costume', this.value)" class="w-full bg-stageabyss/90 border border-white/25 rounded-lg px-2 py-1.5 text-xs text-silvermist focus:border-cyanbeam focus:outline-none"></select>
+          </div>
+          <div class="stage-glass-facet rounded-xl p-2.5">
+            <label for="standoutSwimsuitSelect" class="block text-[10px] uppercase tracking-wider text-cyanbeam mb-1">
+              Best in Swimsuit
+            </label>
+            <select id="standoutSwimsuitSelect" onchange="updateStandoutPick('swimsuit', this.value)" class="w-full bg-stageabyss/90 border border-white/25 rounded-lg px-2 py-1.5 text-xs text-silvermist focus:border-cyanbeam focus:outline-none"></select>
+          </div>
+          <div class="stage-glass-facet rounded-xl p-2.5">
+            <label for="standoutGownSelect" class="block text-[10px] uppercase tracking-wider text-solargold mb-1">
+              Best in Evening Gown
+            </label>
+            <select id="standoutGownSelect" onchange="updateStandoutPick('gown', this.value)" class="w-full bg-stageabyss/90 border border-white/25 rounded-lg px-2 py-1.5 text-xs text-silvermist focus:border-solargold focus:outline-none"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top 30 Leaderboard -->
+      <div class="stage-glass rounded-2xl p-3.5 sm:p-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div>
+            <h2 class="font-display text-base sm:text-lg font-bold diamond-shimmer-text">
+              MY PRE-FINAL TOP 30 LEADERBOARD
+            </h2>
+            <p class="text-xs text-mutedslate">
+              Ranked by Total (/100), then <span class="text-solargold">Evening Gown</span> tiebreaker, then <span class="text-silvermist">Swimsuit</span>. Cut: <span class="text-cyanbeam">85+ pts</span>.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="copyTop30Summary()"
+            class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-cobalt to-sapphire hover:brightness-110 text-silvermist border border-white/35 text-xs transition active:scale-95"
+          >
+            Copy Top 30
+          </button>
+        </div>
+
+        <!-- #30 Fan Vote Slot Override -->
+        <div class="mb-3 stage-glass-facet border-solargold/40 rounded-xl p-2.5 sm:p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <div class="text-xs text-icebeam">#30 FAN • Global Fan Vote Winner Slot</div>
+            <div class="text-[11px] text-mutedslate">Optional: assign a specific delegate to spot #30</div>
+          </div>
+          <select id="fanVoteSlotSelect" onchange="updateStandoutPick('fanVote', this.value)" class="sm:w-64 bg-stageabyss/90 border border-solargold/45 rounded-lg px-2.5 py-1.5 text-xs text-silvermist focus:outline-none"></select>
+        </div>
+
+        <div id="top30ListContainer" class="space-y-2"></div>
+      </div>
+
+
+      <!-- Watch-party combined results -->
+      <div class="stage-glass-highlight rounded-2xl p-3.5 sm:p-4 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <div class="font-display text-base sm:text-lg font-bold diamond-shimmer-text">WATCH-PARTY FINAL RESULTS</div>
+            <p id="aggregateJudgeCount" class="text-xs text-mutedslate">Combined average from all saved judge scorecards</p>
+          </div>
+          <span class="rounded-full border border-solargold/40 bg-solargold/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-solargold">Live combined ranking</span>
+        </div>
+        <div id="aggregatePodium" class="grid grid-cols-1 sm:grid-cols-3 gap-2"></div>
+        <div class="rounded-xl border border-cyanbeam/25 bg-stageabyss/65 p-3 space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-display text-sm font-bold text-cyanbeam">TOP 10 FINALISTS</h3>
+            <span class="text-[10px] text-mutedslate">Ranked by average score /100</span>
+          </div>
+          <div id="aggregateTop10" class="grid grid-cols-1 sm:grid-cols-2 gap-1.5"></div>
+        </div>
+        <div class="rounded-xl border border-white/15 bg-stageabyss/55 p-3 space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-display text-sm font-bold text-icebeam">COMPLETE TOP 30</h3>
+            <span class="text-[10px] text-mutedslate">All judges’ scores averaged</span>
+          </div>
+          <div id="aggregateTop30" class="grid grid-cols-1 sm:grid-cols-2 gap-1.5"></div>
+        </div>
+        <p class="text-[10px] leading-relaxed text-mutedslate">Results update as saved scorecards are added or edited. Each delegate’s average uses the judges who entered a score for that delegate. Ties are broken by Evening Gown, then Swimsuit, then National Costume.</p>
+      </div>
+
+      <!-- Bubble / Next Up Alternates -->
+      <div class="stage-glass rounded-2xl p-3.5 sm:p-4 space-y-2">
+        <div class="flex items-center justify-between">
+          <h3 class="font-display text-xs sm:text-sm font-bold uppercase text-cyanbeam">
+            Next Up / Bubble Alternates (#31–#35)
+          </h3>
+          <span class="text-[11px] text-mutedslate">Closest behind the Top 30 cut</span>
+        </div>
+        <div id="bubbleAlternatesContainer" class="space-y-1.5"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: COMPARE SAVED SCORE CARDS (AUTO-SYNCED WITHOUT SENDING CODES) -->
+    <section id="view-share" class="hidden space-y-4">
+      <div class="stage-glass-highlight rounded-2xl p-4 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+              <h2 class="font-display text-base sm:text-lg font-bold text-icebeam">
+                COMPARE SAVED SCORECARDS
+              </h2>
+            </div>
+            <p class="text-xs text-mutedslate mt-0.5">
+              Your scorecard saves on this device. To include friends using their own phones or computers, have each person send you their JSON scorecard and import it below. Automatic online sharing requires a connected cloud database.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="saveScoresAndSyncCompare()"
+            class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:brightness-110 text-white border border-emerald-300/45 text-xs font-semibold shadow-md transition active:scale-95 inline-flex items-center gap-1.5"
+          >
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+              <polyline points="17 21 17 13 7 13 7 21" />
+            </svg>
+            <span>Save &amp; Sync Now</span>
+          </button>
+        </div>
+
+        <!-- Switch Active Judge Profile or Add a New Judge Profile -->
+        <div class="pt-2.5 border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-mutedslate">Active Judge:</span>
+            <select
+              id="compareActiveJudgeSelect"
+              onchange="switchActiveJudgeProfile(this.value)"
+              class="bg-stageabyss/90 border border-cyanbeam/40 rounded-lg px-2.5 py-1.5 text-xs text-icebeam focus:outline-none"
+            ></select>
+          </div>
+          <div class="flex items-center gap-2">
+            <input
+              id="newJudgeProfileInput"
+              type="text"
+              placeholder="Add judge name (e.g. Jordan)"
+              class="bg-stageabyss/90 border border-white/25 rounded-lg px-2.5 py-1.5 text-xs text-silvermist placeholder-mutedslate focus:border-cyanbeam focus:outline-none w-40 sm:w-48"
+            />
+            <button
+              type="button"
+              onclick="createNewJudgeProfile()"
+              class="px-3 py-1.5 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-icebeam text-xs transition active:scale-95 whitespace-nowrap"
+            >
+              + New Judge
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Watch-Party Top 30 Comparison Dashboard -->
+      <div class="stage-glass rounded-2xl p-4 space-y-3.5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="font-display text-base sm:text-lg font-bold text-icebeam">
+              TOP 30 CONSENSUS &amp; COMPARISON
+            </h2>
+            <p class="text-xs text-mutedslate mt-0.5">
+              Compare every saved judge's Top 30 finalists side-by-side and see consensus picks.
+            </p>
+          </div>
+          <span id="compareJudgeCountBadge" class="px-2.5 py-1 rounded-full bg-white/10 border border-solargold/40 text-xs text-solargold">
+            1 Judge Saved
+          </span>
+        </div>
+
+        <div id="savedJudgesChips" class="flex flex-wrap items-center gap-2"></div>
+        <div id="watchPartyComparisonContainer" class="space-y-3"></div>
+      </div>
+
+      <!-- File Backup & Reset Options -->
+      <div class="stage-glass rounded-2xl p-4 space-y-4">
+        <div>
+          <h2 class="font-display text-sm sm:text-base font-bold text-icebeam">
+            EXPORT &amp; RESET
+          </h2>
+          <p class="text-xs text-mutedslate mt-0.5">
+            Your scorecard saves in this browser. Share the JSON with friends so they can import your entry into their comparison.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <button
+            type="button"
+            onclick="exportScoresJson()"
+            class="p-3.5 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-left transition active:scale-98"
+          >
+            <div class="text-xs font-semibold text-icebeam">Copy JSON Scorecard</div>
+            <div class="text-[11px] text-mutedslate mt-0.5">Copy detailed JSON score sheet</div>
+          </button>
+
+          <button
+            type="button"
+            onclick="downloadScoresCsv()"
+            class="p-3.5 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-left transition active:scale-98"
+          >
+            <div class="text-xs font-semibold text-icebeam">Download CSV Spreadsheet</div>
+            <div class="text-[11px] text-mutedslate mt-0.5">Download all 116 delegates &amp; scores as .csv</div>
+          </button>
+
+          <button
+            type="button"
+            onclick="resetAllScoresConfirm()"
+            class="p-3.5 rounded-xl bg-rose-950/50 hover:bg-rose-900/60 border border-rose-400/35 text-left transition active:scale-98"
+          >
+            <div class="text-xs font-semibold text-rose-200">Clear My Scores</div>
+            <div class="text-[11px] text-rose-300/75 mt-0.5">Reset scores, Top 30 checks, and notes</div>
+          </button>
+        </div>
+
+        <div class="border-t border-white/10 pt-4 space-y-2.5">
+          <div>
+            <h3 class="text-sm font-semibold text-icebeam">ADD A FRIEND'S SCORECARD</h3>
+            <p class="text-[11px] text-mutedslate mt-0.5">Ask your friend to use “Copy JSON Scorecard” and send you the copied text. Paste it here to add their entry to your comparison.</p>
+          </div>
+          <textarea id="importScorecardInput" rows="5" spellcheck="false"
+            placeholder="Paste your friend's JSON scorecard here..."
+            class="w-full rounded-xl bg-stageabyss/90 border border-white/20 p-3 text-xs text-silvermist placeholder-mutedslate focus:border-cyanbeam focus:outline-none"></textarea>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="importFriendScorecard()"
+              class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cobalt to-sapphire border border-white/30 text-xs font-semibold text-white">Import Friend's Scores</button>
+            <label class="px-4 py-2.5 rounded-xl stage-glass-facet border border-white/20 text-xs font-semibold text-icebeam cursor-pointer">
+              Choose JSON File
+              <input type="file" accept=".json,application/json" class="hidden" onchange="importFriendScorecardFile(this.files[0])">
+            </label>
+          </div>
+          <p class="text-[10px] text-mutedslate">Import adds or updates that judge's entry; it does not overwrite your own scorecard.</p>
+        </div>
+        <div id="shareOutputBox" class="hidden rounded-xl stage-glass-facet p-3 text-xs text-silvermist break-all"></div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 pb-10 pt-4 text-center text-[11px] text-mutedslate">
+      Roster includes 116 delegates. Country flags and diamond flag emblems render automatically when portraits are unavailable.
+    </div>
+  </main>
+
+  <!-- Official Logo Customizer Modal -->
+  <div id="logoModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="stage-glass rounded-2xl max-w-sm w-full p-5 space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="font-display text-sm font-bold text-icebeam">75th Miss Universe Official Emblem</h3>
+        <button type="button" onclick="closeLogoModal()" class="text-mutedslate hover:text-silvermist">✕</button>
+      </div>
+      <div class="flex flex-col items-center gap-2 py-2">
+        <div id="logoModalPreview" class="w-24 h-24 rounded-2xl stage-glass-facet p-3 flex items-center justify-center"></div>
+        <span class="text-[11px] text-mutedslate">Official MU75 Emblem</span>
+      </div>
+      <label class="block w-full py-2 px-3 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-icebeam text-xs text-center cursor-pointer transition">
+        Upload Custom Logo Image
+        <input type="file" accept="image/*" onchange="handleLogoFileChange(event)" class="hidden" />
+      </label>
+      <div class="flex items-center justify-between pt-1 gap-2">
+        <button type="button" onclick="resetDefaultLogo()" class="px-3 py-2 rounded-xl stage-glass-facet text-mutedslate hover:text-silvermist text-xs">Reset Official Logo</button>
+        <button type="button" onclick="closeLogoModal()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 text-xs">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Centered Large Delegate Portrait Lightbox Modal -->
+  <div id="portraitLightboxModal" onclick="closePortraitLightbox(event)" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div onclick="event.stopPropagation()" class="stage-glass rounded-3xl max-w-lg w-full p-4 sm:p-5 space-y-3.5 shadow-2xl border border-solargold/45">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 min-w-0">
+          <span id="lightboxDelegateFlag" class="liquid-flag-pill"></span>
+          <span id="lightboxDelegateMeta" class="text-xs font-mono text-cyanbeam truncate">#1 • COUNTRY</span>
+        </div>
+        <button
+          type="button"
+          onclick="closePortraitLightbox()"
+          class="w-8 h-8 rounded-full stage-glass-facet hover:border-cyanbeam/60 text-silvermist flex items-center justify-center text-sm transition active:scale-95"
+          aria-label="Close portrait preview"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div
+        id="lightboxPortraitFrame"
+        class="mu75-poster-frame relative mx-auto w-full h-[56vh] sm:h-[62vh] max-h-[520px] rounded-2xl border border-solargold/50 shadow-2xl flex items-center justify-center"
+      >
+        <div id="lightboxFlagBrushstroke" class="mu75-poster-brushstroke"></div>
+        <img
+          id="lightboxPortraitImg"
+          src=""
+          alt=""
+          class="mu75-poster-portrait"
+        />
+        <div class="mu75-poster-vignette"></div>
+        <div class="absolute top-2.5 right-2.5 z-10 px-2.5 py-1 rounded-xl bg-stagevoid/85 backdrop-blur-md border border-white/30 text-right">
+          <span id="lightboxTotalPts" class="text-sm sm:text-base font-bold text-solargold">0</span>
+          <span class="text-[11px] text-mutedslate">/100</span>
+        </div>
+      </div>
+
+      <div class="text-center space-y-0.5">
+        <h3 id="lightboxCountryTitle" class="font-display text-lg sm:text-2xl font-bold uppercase truncate">
+          Country
+        </h3>
+        <p id="lightboxDelegateName" class="text-xs sm:text-sm text-silvermist truncate">
+          Delegate Name
+        </p>
+      </div>
+
+      <div class="flex items-center justify-between gap-2 pt-1">
+        <button
+          type="button"
+          onclick="stepPortraitLightbox(-1)"
+          class="px-3 py-2 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-silvermist text-xs transition active:scale-95"
+        >
+          ← Prev
+        </button>
+        <button
+          type="button"
+          onclick="scoreFromPortraitLightbox()"
+          class="flex-1 py-2 px-4 rounded-xl bg-gradient-to-r from-cobalt to-sapphire hover:brightness-110 text-silvermist border border-white/35 text-xs font-semibold transition active:scale-95"
+        >
+          Score Delegate
+        </button>
+        <button
+          type="button"
+          onclick="stepPortraitLightbox(1)"
+          class="px-3 py-2 rounded-xl stage-glass-facet hover:border-cyanbeam/50 text-silvermist text-xs transition active:scale-95"
+        >
+          Next →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-200 max-w-[90vw]">
+    <div id="toastMessage" class="px-4 py-2 rounded-full bg-stageabyss/95 backdrop-blur-md text-icebeam text-xs shadow-xl border border-solargold/50 truncate"></div>
+  </div>
+
+  <!-- Judge Name Modal -->
+  <div id="judgeModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="stage-glass rounded-2xl max-w-sm w-full p-5 space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="font-display text-sm font-bold text-icebeam">Watch-Party Judge Name</h3>
+        <button type="button" onclick="closeJudgeModal()" class="text-mutedslate hover:text-silvermist">✕</button>
+      </div>
+      <p class="text-xs text-mutedslate">Saving scores automatically publishes under this judge name on the Compare page.</p>
+      <input
+        id="judgeNameInput"
+        type="text"
+        placeholder="Enter your name..."
+        class="w-full stage-glass-facet focus:border-cyanbeam rounded-xl px-3 py-2 text-xs text-silvermist focus:outline-none"
+      />
+      <div class="flex justify-end gap-2 pt-1">
+        <button type="button" onclick="closeJudgeModal()" class="px-3.5 py-2 rounded-xl stage-glass-facet text-mutedslate text-xs">Cancel</button>
+        <button type="button" onclick="saveJudgeName()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 text-xs font-semibold">Save Name</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. ALL 116 DELEGATES IN EXACT #1 TO #116 ORDER
+    // =========================================================================
+    const RAW_DELEGATES_V5 = [
+      [1, "Albania", "Jogersa Beqiri", "AL", "al"],
+      [2, "Argentina", "Daiana Stefani Pereyra", "AR", "ar"],
+      [3, "Armenia", "Arena Zeynalian", "AM", "am"],
+      [4, "Aruba", "Elizabeth Johnson", "AW", "aw"],
+      [5, "Australia", "Caitlin Worthington", "AU", "au"],
+      [6, "Bahamas", "Shawndra Henfield", "BS", "bs"],
+      [7, "Bangladesh", "Samira Khan Mahi", "BD", "bd"],
+      [8, "Belarus", "Aliya Karotkaya", "BY", "by"],
+      [9, "Belgium", "Olga Lombardo", "BE", "be"],
+      [10, "Belize", "Caleigh-Rose West", "BZ", "bz"],
+      [11, "Bolivia", "Valeria Mena", "BO", "bo"],
+      [12, "Bonaire", "Caroline Porras", "BQ", "bq"],
+      [13, "Botswana", "Dabilo Moses", "BW", "bw"],
+      [14, "Brazil", "Marcella Kozinski de Barros", "BR", "br"],
+      [15, "British Virgin Islands", "Orealia Eugenie Thomas", "VG", "vg"],
+      [16, "Cambodia", "Rthna Than", "KH", "kh"],
+      [17, "Cameroon", "Audrey Black", "CM", "cm"],
+      [18, "Canada", "Aslihan Morali", "CA", "ca"],
+      [19, "Cape Verde", "Armandina Cunha", "CV", "cv"],
+      [20, "Cayman Islands", "Juliana May Myers", "KY", "ky"],
+      [21, "Chile", "Dominga López", "CL", "cl"],
+      [22, "China", "Shiqi Wang", "CN", "cn"],
+      [23, "Colombia", "Maria Alejandra Lopez Perez", "CO", "co"],
+      [24, "Costa Rica", "María Alejandra “Mariale” Acosta García", "CR", "cr"],
+      [25, "Croatia", "Antea Mršić", "HR", "hr"],
+      [26, "Cuba", "Mia Dio", "CU", "cu"],
+      [27, "Curaçao", "Bianty Rojer Gomperts", "CW", "cw"],
+      [28, "Czech Republic", "Dominika Kotoučková", "CZ", "cz"],
+      [29, "DR Congo", "Jessi Kalambayi", "CD", "cd"],
+      [30, "Denmark", "Fie Rose Lindegaard", "DK", "dk"],
+      [31, "Dominican Republic", "Melissa Núñez", "DO", "do"],
+      [32, "Ecuador", "Dalia Bucaram", "EC", "ec"],
+      [33, "Egypt", "Sonia Gergis", "EG", "eg"],
+      [34, "El Salvador", "Sofia Cordova", "SV", "sv"],
+      [35, "Equatorial Guinea", "Isabel Mbomio", "GQ", "gq"],
+      [36, "Estonia", "Emili Denneng", "EE", "ee"],
+      [37, "Ethiopia", "Bruktawit Belete Woldeyes", "ET", "et"],
+      [38, "Finland", "Veera Grönlund", "FI", "fi"],
+      [39, "France", "Garance Authié", "FR", "fr"],
+      [40, "Germany", "Celina Weil", "DE", "de"],
+      [41, "Ghana", "Belvy Ofori", "GH", "gh"],
+      [42, "Great Britain", "Angela Pitao Aumonier", "GB", "gb"],
+      [43, "Greece", "Olivia Vasilopoulos", "GR", "gr"],
+      [44, "Guadeloupe", "Chloé Deher", "GP", "gp"],
+      [45, "Guatemala", "María Adelina Castillo Birba", "GT", "gt"],
+      [46, "Guinea", "Justine Kamara", "GN", "gn"],
+      [47, "Guyana", "Angel Bhathal", "GY", "gy"],
+      [48, "Haiti", "Tatenda Rameau", "HT", "ht"],
+      [49, "Honduras", "Luisa Pineda", "HN", "hn"],
+      [50, "Hong Kong", "Jennifer Zhou", "HK", "hk"],
+      [51, "Hungary", "Kiss Kamila", "HU", "hu"],
+      [52, "Iceland", "Sigríður Hrafnkelsdóttir", "IS", "is"],
+      [53, "India", "Kaziah Liz Mejo", "IN", "in"],
+      [54, "Iraq", "Samantha Slewa", "IQ", "iq"],
+      [55, "Ireland", "Aideen Howard", "IE", "ie"],
+      [56, "Israel", "Danielle Sophie Yablonka", "IL", "il"],
+      [57, "Italy", "Giada Folcia", "IT", "it"],
+      [58, "Jamaica", "Celene Hall", "JM", "jm"],
+      [59, "Japan", "Sayuki Ito", "JP", "jp"],
+      [60, "Jordan", "Destiny Anbar", "JO", "jo"],
+      [61, "Kazakhstan", "Alina Ekaterinecheva", "KZ", "kz"],
+      [62, "Kenya", "Jean Ojiro", "KE", "ke"],
+      [63, "Kosovo", "Evisa Pacolli", "XK", "xk"],
+      [64, "Kyrgyzstan", "Medina Ermekova", "KG", "kg"],
+      [65, "Latvia", "Lasma Kuhtarska", "LV", "lv"],
+      [66, "Lebanon", "Perla Harb", "LB", "lb"],
+      [67, "Lithuania", "Olga Bykadorova", "LT", "lt"],
+      [68, "Macau", "Xuhe Hou", "MO", "mo"],
+      [69, "Malta", "Francesca Mercieca", "MT", "mt"],
+      [70, "Martinique", "Larissa Ségarel", "MQ", "mq"],
+      [71, "Mayotte", "Maëva Toumbou Dani", "YT", "yt"],
+      [72, "Mexico", "María Vargas", "MX", "mx"],
+      [73, "Moldova", "Dorina Darii", "MD", "md"],
+      [74, "Mongolia", "Enkhdelgerekh Enkhbold", "MN", "mn"],
+      [75, "Montenegro", "Aleksandra Ivezaj", "ME", "me"],
+      [76, "Myanmar", "May Grace Parry", "MM", "mm"],
+      [77, "Namibia", "Charene Labuschagne", "NA", "na"],
+      [78, "Netherlands", "Melissa Bottema", "NL", "nl"],
+      [79, "New Zealand", "Georgia Waddington", "NZ", "nz"],
+      [80, "Nicaragua", "Jasmine Blandford", "NI", "ni"],
+      [81, "Nigeria", "Danielle Fadeke Adewusi", "NG", "ng"],
+      [82, "Norway", "Abelone Smedsrud", "NO", "no"],
+      [83, "Pakistan", "Misbah Arshad", "PK", "pk"],
+      [84, "Panama", "Gabriela González", "PA", "pa"],
+      [85, "Paraguay", "Gretha Matiauda", "PY", "py"],
+      [86, "Peru", "Luren Leticia Márquez Canales", "PE", "pe"],
+      [87, "Philippines", "Beatrice Rebecca “Bea” Millan Windorski", "PH", "ph"],
+      [88, "Poland", "Vivica Lewandowski", "PL", "pl"],
+      [89, "Portugal", "Isabela Santos", "PT", "pt"],
+      [90, "Puerto Rico", "Jennifer Abreu Mora de Barreto", "PR", "pr"],
+      [91, "Réunion", "Abigaëlle Tailamée", "RE", "re"],
+      [92, "Romania", "Sabina Parmac", "RO", "ro"],
+      [93, "Russia", "Alexandra Stashkevich", "RU", "ru"],
+      [94, "Saint Lucia", "Bernella Velinor", "LC", "lc"],
+      [95, "Saint Martin", "Elle Duncan", "MF", "mf"],
+      [96, "Serbia", "Nikolina Vujičić", "RS", "rs"],
+      [97, "Sierra Leone", "Katti Fofanah", "SL", "sl"],
+      [98, "Slovakia", "Anna Lickova", "SK", "sk"],
+      [99, "South Africa", "Bajabulise Thela", "ZA", "za"],
+      [100, "South Korea", "Kim Yurim", "KR", "kr"],
+      [101, "Spain", "Susana Medina", "ES", "es"],
+      [102, "Sri Lanka", "Nimhara Sasindi", "LK", "lk"],
+      [103, "Suriname", "Maruschka Sahiboe", "SR", "sr"],
+      [104, "Sweden", "Josefin Strand", "SE", "se"],
+      [105, "Switzerland", "Itiya Dube", "CH", "ch"],
+      [106, "Tanzania", "Elizabeth Makune", "TZ", "tz"],
+      [107, "Trinidad and Tobago", "Vinita Manoo", "TT", "tt"],
+      [108, "Tunisia", "Sarrah Brahmi", "TN", "tn"],
+      [109, "Turks and Caicos", "Selena Grant", "TC", "tc"],
+      [110, "Uganda", "Mitchelle Daka", "UG", "ug"],
+      [111, "Ukraine", "Anna Nikonova", "UA", "ua"],
+      [112, "United States", "Justus Anye Coleman Kelley", "US", "us"],
+      [113, "U.S. Virgin Islands", "Jenna-Monét Queeley", "VI", "vi"],
+      [114, "Uruguay", "Lucía Piñeyro", "UY", "uy"],
+      [115, "Uzbekistan", "Ziedakhon Sharipova", "UZ", "uz"],
+      [116, "Venezuela", "Clara Federica Vegas Goetz", "VE", "ve"]
+    ];
+
+    const ARCHIVE_PHOTO_BY_COUNTRY = {
+      "Argentina": "Miss Universe/Argentina.jpg",
+      "Armenia": "Miss Universe/Armenia.jpg",
+      "Aruba": "Miss Universe/Aruba.jpg",
+      "Australia": "Miss Universe/Australia.jpg",
+      "Belarus": "Miss Universe/Belarus.jpg",
+      "Belgium": "Miss Universe/Belgium.jpg",
+      "Belize": "Miss Universe/Belize.jpg",
+      "Bolivia": "Miss Universe/Bolivia.jpg",
+      "Bonaire": "Miss Universe/Bonaire.jpg",
+      "Botswana": "Miss Universe/Botswana.jpg",
+      "Brazil": "Miss Universe/Brazil.jpg",
+      "British Virgin Islands": "Miss Universe/British Virgin Islands.jpg",
+      "Cambodia": "Miss Universe/Cambodia.jpg",
+      "Cameroon": "Miss Universe/Cameroon.jpg",
+      "Canada": "Miss Universe/Canada.jpg",
+      "Cape Verde": "Miss Universe/Cabo Verde.jpg",
+      "Cayman Islands": "Miss Universe/Cayman Islands.jpg",
+      "Chile": "Miss Universe/Chile.jpg",
+      "China": "Miss Universe/China.jpg",
+      "Colombia": "Miss Universe/Colombia.jpg",
+      "Costa Rica": "Miss Universe/Costa Rica.jpg",
+      "Croatia": "Miss Universe/Croatia.jpg",
+      "Cuba": "Miss Universe/Cuba.jpg",
+      "Curaçao": "Miss Universe/Curacao.jpg",
+      "Czech Republic": "Miss Universe/Czech Republic.jpg",
+      "Denmark": "Miss Universe/Denmark.jpg",
+      "Dominican Republic": "Miss Universe/Dominican Republic.jpg",
+      "DR Congo": "Miss Universe/DRC.jpg",
+      "Ecuador": "Miss Universe/Ecuador.jpg",
+      "Equatorial Guinea": "Miss Universe/Ecuatorial Guinea.jpg",
+      "Estonia": "Miss Universe/Estonia.jpg",
+      "Ethiopia": "Miss Universe/Ethiopia.jpg",
+      "Finland": "Miss Universe/Finland.jpg",
+      "France": "Miss Universe/France.jpg",
+      "Germany": "Miss Universe/Germany.jpg",
+      "Great Britain": "Miss Universe/Great Britain.jpg",
+      "Greece": "Miss Universe/Greece.jpg",
+      "Guadeloupe": "Miss Universe/Guadaloupe.jpg",
+      "Guatemala": "Miss Universe/Guatemala.jpg",
+      "Guinea": "Miss Universe/Guinea.jpg",
+      "Guyana": "Miss Universe/Guyana.jpg",
+      "Haiti": "Miss Universe/Haiti.jpg",
+      "Honduras": "Miss Universe/Honduras.jpg",
+      "Hungary": "Miss Universe/Hungary.jpg",
+      "Iceland": "Miss Universe/Iceland.jpg",
+      "India": "Miss Universe/India.jpg",
+      "Iraq": "Miss Universe/Iraq.jpg",
+      "Ireland": "Miss Universe/Ireland.jpg",
+      "Israel": "Miss Universe/Israel.jpg",
+      "Italy": "Miss Universe/Italy.jpg",
+      "Jamaica": "Miss Universe/Jamaica.jpg",
+      "Japan": "Miss Universe/Japan.jpg",
+      "Kazakhstan": "Miss Universe/Kazakhstan.jpg",
+      "Kenya": "Miss Universe/Kenya.jpg",
+      "Kosovo": "Miss Universe/Kosovo.jpg",
+      "Kyrgyzstan": "Miss Universe/Kyrgyzstan.jpg",
+      "Latvia": "Miss Universe/Latvia.jpg",
+      "Lebanon": "Miss Universe/Lebanon.jpg",
+      "Lithuania": "Miss Universe/Lithuania.jpg",
+      "Macau": "Miss Universe/Macau.jpg",
+      "Malta": "Miss Universe/Malta.jpg",
+      "Martinique": "Miss Universe/Martinique.jpg",
+      "Mayotte": "Miss Universe/Mayotte.jpg",
+      "Mexico": "Miss Universe/Mexico.jpg",
+      "Mongolia": "Miss Universe/Mongolia.jpg",
+      "Montenegro": "Miss Universe/Montenegro.jpg",
+      "Myanmar": "Miss Universe/Myanmar.jpg",
+      "Namibia": "Miss Universe/Namibia.jpg",
+      "New Zealand": "Miss Universe/New Zealand.jpg",
+      "Nicaragua": "Miss Universe/Nicaragua.jpg",
+      "Nigeria": "Miss Universe/Nigeria.jpg",
+      "Norway": "Miss Universe/Norway.jpg",
+      "Pakistan": "Miss Universe/Pakistan.jpg",
+      "Panama": "Miss Universe/Panama.jpg",
+      "Paraguay": "Miss Universe/Paraguay.jpg",
+      "Peru": "Miss Universe/Peru.jpg",
+      "Philippines": "Miss Universe/Philippines.jpg",
+      "Poland": "Miss Universe/Poland.jpg",
+      "Portugal": "Miss Universe/Portugal.jpg",
+      "Puerto Rico": "Miss Universe/Puerto Rico.jpg",
+      "Réunion": "Miss Universe/Reunion Island.jpg",
+      "Romania": "Miss Universe/Romania.jpg",
+      "Saint Lucia": "Miss Universe/Saint Lucia.jpg",
+      "Saint Martin": "Miss Universe/Saint-Martin.jpg",
+      "Serbia": "Miss Universe/Serbia.jpg",
+      "Slovakia": "Miss Universe/Slovakia.jpg",
+      "South Africa": "Miss Universe/South Africa.jpg",
+      "Spain": "Miss Universe/Spain.jpg",
+      "Sri Lanka": "Miss Universe/Sri Lanka.jpg",
+      "Suriname": "Miss Universe/Suriname.jpg",
+      "Sweden": "Miss Universe/Sweden.jpg",
+      "Switzerland": "Miss Universe/Switzerland.jpg",
+      "Bahamas": "Miss Universe/The Bahamas.jpg",
+      "Trinidad and Tobago": "Miss Universe/Trinidad and Tobago.jpg",
+      "Tunisia": "Miss Universe/Tunisia.jpg",
+      "Turks and Caicos": "Miss Universe/Turks and Caicos.jpg",
+      "U.S. Virgin Islands": "Miss Universe/U.S. Virgin Islands.jpg",
+      "Uganda": "Miss Universe/Uganda.jpg",
+      "Ukraine": "Miss Universe/Ukraine.jpg",
+      "Uruguay": "Miss Universe/Uruguay.jpg",
+      "United States": "Miss Universe/USA.jpg",
+      "Uzbekistan": "Miss Universe/Uzbekistan.jpg",
+      "Venezuela": "Miss Universe/Venezuela.jpg"
+    };
+
+    const DELEGATES = RAW_DELEGATES_V5.map(([num, country, rawName, badgeCode, iso2]) => {
+      const id = String(num);
+      const padded = String(num).padStart(3, '0');
+      const cleanedName = String(rawName || '').replace(/^Delegate\s+/i, '').trim();
+      const name = cleanedName || 'Name not confirmed';
+      const flagUrl = iso2 ? `https://flagcdn.com/w320/${iso2.toLowerCase()}.png` : '';
+      const flagHdUrl = iso2 ? `https://flagcdn.com/w1280/${iso2.toLowerCase()}.png` : '';
+      const archivePhotoUrl = ARCHIVE_PHOTO_BY_COUNTRY[country] || '';
+      return { id, num, padded, country, name, badgeCode, iso2, flagUrl, flagHdUrl, archivePhotoUrl };
+    });
+
+    const DEFAULT_MU75_LOGO_URL = 'https://cdn.prod.website-files.com/6aecd8e1f2621e799a6c620b/6aecda23fe94bdfa486139dd_logo-mu75.webp';
+
+    const DEFAULT_MU75_LOGO_SVG = `
+      <span class="flex items-center justify-center">
+        <img
+          src="https://cdn.prod.website-files.com/6aecd8e1f2621e799a6c620b/6aecda23fe94bdfa486139dd_logo-mu75.webp"
+          alt="75th Miss Universe Official Logo"
+          class="mu75-main-logo"
+          onerror="this.outerHTML='<svg class=\\'w-9 h-9\\' viewBox=\\'0 0 80 80\\' fill=\\'none\\'><polygon points=\\'40,8 66,28 40,72 14,28\\' stroke=\\'#F5C451\\' stroke-width=\\'2.2\\' fill=\\'rgba(186,230,253,0.14)\\'/></svg>';"
+        />
+      </span>
+    `;
+
+    // =========================================================================
+    // 2. STATE, LOCAL STORAGE PERSISTENCE & AUTO-SYNC COMPARE POOL
+    // =========================================================================
+    const STORAGE_KEY = 'mu75_v5_watchparty_scoresheet_v1';
+    const SHARED_POOL_KEY = 'mu75_v5_shared_judge_pool_v1';
+    const SYNC_CHANNEL_NAME = 'mu75_watchparty_compare_sync_v1';
+    const syncChannel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel(SYNC_CHANNEL_NAME) : null;
+
+    const appState = {
+      judgeName: 'Watch Party Judge',
+      activeView: 'home',
+      activeDelegateId: '1',
+      lightboxDelegateId: '1',
+      lightboxFaceZoom: true,
+      searchQuery: '',
+      filter: 'all',
+      scores: {},
+      customLogoDataUrl: '',
+      standouts: { costume: '', swimsuit: '', gown: '', fanVote: '' },
+      publishedJudges: {}
+    };
+
+    function normalizeJudgeKey(name) {
+      return String(name || 'Watch Party Judge').trim().toLowerCase() || 'watch party judge';
+    }
+
+    function deepClone(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    }
+
+    function saveSharedPoolOnly() {
+      try {
+        localStorage.setItem(SHARED_POOL_KEY, JSON.stringify(appState.publishedJudges));
+      } catch (err) {
+        console.error('Failed to persist shared judge pool:', err);
+      }
+    }
+
+    function publishCurrentJudgeToComparePool(notifyPeers = true) {
+      const key = normalizeJudgeKey(appState.judgeName);
+      appState.publishedJudges[key] = {
+        judgeName: appState.judgeName,
+        updatedAt: new Date().toISOString(),
+        scores: deepClone(appState.scores),
+        standouts: deepClone(appState.standouts)
+      };
+      saveSharedPoolOnly();
+      if (notifyPeers && syncChannel) {
+        try {
+          syncChannel.postMessage({ type: 'pool-updated', updatedAt: Date.now() });
+        } catch (_) {}
+      }
+    }
+
+    function loadSavedState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (data.judgeName) appState.judgeName = String(data.judgeName);
+          if (data.scores && typeof data.scores === 'object') appState.scores = data.scores;
+          if (typeof data.customLogoDataUrl === 'string') appState.customLogoDataUrl = data.customLogoDataUrl;
+          if (data.standouts && typeof data.standouts === 'object') {
+            appState.standouts = { ...appState.standouts, ...data.standouts };
+          }
+        }
+
+        const sharedRaw = localStorage.getItem(SHARED_POOL_KEY);
+        if (sharedRaw) {
+          const sharedData = JSON.parse(sharedRaw);
+          if (sharedData && typeof sharedData === 'object') {
+            appState.publishedJudges = sharedData;
+          }
+        }
+
+        const currentKey = normalizeJudgeKey(appState.judgeName);
+        if (!appState.publishedJudges[currentKey]) {
+          appState.publishedJudges[currentKey] = {
+            judgeName: appState.judgeName,
+            updatedAt: new Date().toISOString(),
+            scores: deepClone(appState.scores),
+            standouts: deepClone(appState.standouts)
+          };
+          saveSharedPoolOnly();
+        }
+      } catch (err) {
+        console.error('Failed to load saved score sheet:', err);
+      }
+    }
+
+    function saveStateToStorage(autoPublish = true) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          judgeName: appState.judgeName,
+          scores: appState.scores,
+          customLogoDataUrl: appState.customLogoDataUrl,
+          standouts: appState.standouts
+        }));
+        if (autoPublish) {
+          publishCurrentJudgeToComparePool(true);
+        }
+      } catch (err) {
+        console.error('Failed to save score sheet to localStorage:', err);
+      }
+    }
+
+    function refreshFromSharedStorage() {
+      try {
+        const sharedRaw = localStorage.getItem(SHARED_POOL_KEY);
+        if (sharedRaw) {
+          const parsed = JSON.parse(sharedRaw);
+          if (parsed && typeof parsed === 'object') {
+            appState.publishedJudges = parsed;
+          }
+        }
+        if (appState.activeView === 'share') {
+          renderWatchPartyComparison();
+        }
+      } catch (err) {
+        console.error('Failed to refresh shared judge pool:', err);
+      }
+    }
+
+    window.addEventListener('storage', (event) => {
+      if (event.key === SHARED_POOL_KEY || event.key === STORAGE_KEY) {
+        refreshFromSharedStorage();
+      }
+    });
+
+    if (syncChannel) {
+      syncChannel.onmessage = (event) => {
+        if (event.data && event.data.type === 'pool-updated') {
+          refreshFromSharedStorage();
+        }
+      };
+    }
+
+    function clampNum(val, min, max) {
+      const n = Number(val);
+      if (Number.isNaN(n)) return min;
+      return Math.max(min, Math.min(max, Math.round(n)));
+    }
+
+    function getComputedScoreFromMap(scoresMap, id) {
+      const raw = (scoresMap && scoresMap[id]) || {};
+      const ncCraft = clampNum(raw.ncCraft, 0, 15);
+      const ncStage = clampNum(raw.ncStage, 0, 15);
+      const swWalk = clampNum(raw.swWalk, 0, 15);
+      const swConf = clampNum(raw.swConf, 0, 15);
+      const swStyle = clampNum(raw.swStyle, 0, 5);
+      const egGown = clampNum(raw.egGown, 0, 15);
+      const egGrace = clampNum(raw.egGrace, 0, 15);
+      const egGlam = clampNum(raw.egGlam, 0, 5);
+
+      const costumePts = ncCraft + ncStage;
+      const swimsuitPts = swWalk + swConf + swStyle;
+      const gownPts = egGown + egGrace + egGlam;
+      const totalPts = costumePts + swimsuitPts + gownPts;
+      const notes = typeof raw.notes === 'string' ? raw.notes : '';
+      const top30 = Boolean(raw.top30);
+      const hasEntry = totalPts > 0 || top30 || notes.trim().length > 0;
+
+      return {
+        ncCraft, ncStage,
+        swWalk, swConf, swStyle,
+        egGown, egGrace, egGlam,
+        costumePts, swimsuitPts, gownPts, totalPts,
+        top30, notes, hasEntry
+      };
+    }
+
+    function getComputedScore(id) {
+      return getComputedScoreFromMap(appState.scores, id);
+    }
+
+    // =========================================================================
+    // 3. LOGO, BACKDROPS, DIAMOND FLAGS & PORTRAIT LIGHTBOX
+    // =========================================================================
+    const FLAG_NAME_GRADIENTS = {
+      al: 'linear-gradient(90deg, #E41E20 0%, #FF4D4F 50%, #FACC15 100%)',
+      ar: 'linear-gradient(90deg, #74ACDF 0%, #FFFFFF 50%, #F6B40E 100%)',
+      am: 'linear-gradient(90deg, #D90012 0%, #0033A0 50%, #F2A800 100%)',
+      aw: 'linear-gradient(90deg, #418FDE 0%, #FFE900 55%, #D90012 100%)',
+      au: 'linear-gradient(90deg, #1D4ED8 0%, #FFFFFF 50%, #EF4444 100%)',
+      bs: 'linear-gradient(90deg, #00778B 0%, #FFC72C 50%, #00778B 100%)',
+      bd: 'linear-gradient(90deg, #16A34A 0%, #EF4444 55%, #4ADE80 100%)',
+      by: 'linear-gradient(90deg, #C8313E 0%, #FFFFFF 52%, #4AA657 100%)',
+      be: 'linear-gradient(90deg, #FACC15 0%, #EF4444 52%, #FDE047 100%)',
+      bz: 'linear-gradient(90deg, #1D4ED8 0%, #EF4444 50%, #38BDF8 100%)',
+      bo: 'linear-gradient(90deg, #D52B1E 0%, #F9E300 50%, #007934 100%)',
+      bq: 'linear-gradient(90deg, #21468B 0%, #FFFFFF 50%, #AE1C28 100%)',
+      bw: 'linear-gradient(90deg, #6DA9D2 0%, #FFFFFF 50%, #6DA9D2 100%)',
+      br: 'linear-gradient(90deg, #22C55E 0%, #FACC15 52%, #3B82F6 100%)',
+      vg: 'linear-gradient(90deg, #1D4ED8 0%, #EF4444 50%, #38BDF8 100%)',
+      kh: 'linear-gradient(90deg, #2563EB 0%, #EF4444 52%, #60A5FA 100%)',
+      cm: 'linear-gradient(90deg, #22C55E 0%, #EF4444 50%, #FACC15 100%)',
+      ca: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #EF4444 100%)',
+      cv: 'linear-gradient(90deg, #1D4ED8 0%, #FFFFFF 45%, #EF4444 68%, #FACC15 100%)',
+      ky: 'linear-gradient(90deg, #2563EB 0%, #EF4444 50%, #38BDF8 100%)',
+      cl: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      cn: 'linear-gradient(90deg, #EF4444 0%, #FACC15 55%, #F87171 100%)',
+      co: 'linear-gradient(90deg, #FACC15 0%, #2563EB 58%, #EF4444 100%)',
+      cr: 'linear-gradient(90deg, #2563EB 0%, #FFFFFF 35%, #EF4444 52%, #FFFFFF 68%, #2563EB 100%)',
+      hr: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #3B82F6 100%)',
+      cu: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 52%, #EF4444 100%)',
+      cw: 'linear-gradient(90deg, #2563EB 0%, #FACC15 52%, #60A5FA 100%)',
+      cz: 'linear-gradient(90deg, #FFFFFF 0%, #3B82F6 48%, #EF4444 100%)',
+      cd: 'linear-gradient(90deg, #38BDF8 0%, #FACC15 50%, #EF4444 100%)',
+      dk: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #EF4444 100%)',
+      do: 'linear-gradient(90deg, #2563EB 0%, #FFFFFF 50%, #EF4444 100%)',
+      ec: 'linear-gradient(90deg, #FACC15 0%, #3B82F6 55%, #EF4444 100%)',
+      eg: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #FACC15 100%)',
+      sv: 'linear-gradient(90deg, #2563EB 0%, #FFFFFF 50%, #2563EB 100%)',
+      gq: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #EF4444 100%)',
+      ee: 'linear-gradient(90deg, #38BDF8 0%, #94A3B8 50%, #FFFFFF 100%)',
+      et: 'linear-gradient(90deg, #22C55E 0%, #FACC15 50%, #EF4444 100%)',
+      fi: 'linear-gradient(90deg, #FFFFFF 0%, #3B82F6 50%, #FFFFFF 100%)',
+      fr: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      de: 'linear-gradient(90deg, #94A3B8 0%, #EF4444 50%, #FACC15 100%)',
+      gh: 'linear-gradient(90deg, #EF4444 0%, #FACC15 50%, #22C55E 100%)',
+      gb: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      gr: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 50%, #2563EB 100%)',
+      gp: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      gt: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 50%, #38BDF8 100%)',
+      gn: 'linear-gradient(90deg, #EF4444 0%, #FACC15 50%, #22C55E 100%)',
+      gy: 'linear-gradient(90deg, #22C55E 0%, #FACC15 52%, #EF4444 100%)',
+      ht: 'linear-gradient(90deg, #2563EB 0%, #FFFFFF 48%, #EF4444 100%)',
+      hn: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 50%, #38BDF8 100%)',
+      hk: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 52%, #F87171 100%)',
+      hu: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #22C55E 100%)',
+      is: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      in: 'linear-gradient(90deg, #F97316 0%, #FFFFFF 50%, #22C55E 100%)',
+      iq: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #22C55E 100%)',
+      ie: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #F97316 100%)',
+      il: 'linear-gradient(90deg, #FFFFFF 0%, #38BDF8 50%, #FFFFFF 100%)',
+      it: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #EF4444 100%)',
+      jm: 'linear-gradient(90deg, #22C55E 0%, #FACC15 50%, #22C55E 100%)',
+      jp: 'linear-gradient(90deg, #FFFFFF 0%, #EF4444 52%, #FFFFFF 100%)',
+      jo: 'linear-gradient(90deg, #94A3B8 0%, #FFFFFF 45%, #22C55E 68%, #EF4444 100%)',
+      kz: 'linear-gradient(90deg, #38BDF8 0%, #FACC15 52%, #67E8F9 100%)',
+      ke: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #22C55E 100%)',
+      xk: 'linear-gradient(90deg, #2563EB 0%, #FACC15 52%, #60A5FA 100%)',
+      kg: 'linear-gradient(90deg, #EF4444 0%, #FACC15 55%, #F87171 100%)',
+      lv: 'linear-gradient(90deg, #9F1D35 0%, #FFFFFF 50%, #9F1D35 100%)',
+      lb: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #22C55E 100%)',
+      lt: 'linear-gradient(90deg, #FACC15 0%, #22C55E 50%, #EF4444 100%)',
+      mo: 'linear-gradient(90deg, #22C55E 0%, #FACC15 52%, #4ADE80 100%)',
+      mt: 'linear-gradient(90deg, #FFFFFF 0%, #EF4444 65%, #FCA5A5 100%)',
+      mq: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #EF4444 100%)',
+      yt: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      mx: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #EF4444 100%)',
+      md: 'linear-gradient(90deg, #2563EB 0%, #FACC15 50%, #EF4444 100%)',
+      mn: 'linear-gradient(90deg, #EF4444 0%, #2563EB 50%, #FACC15 100%)',
+      me: 'linear-gradient(90deg, #EF4444 0%, #FACC15 52%, #FDE047 100%)',
+      mm: 'linear-gradient(90deg, #FACC15 0%, #22C55E 50%, #EF4444 100%)',
+      na: 'linear-gradient(90deg, #2563EB 0%, #EF4444 50%, #22C55E 100%)',
+      nl: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #2563EB 100%)',
+      nz: 'linear-gradient(90deg, #2563EB 0%, #FFFFFF 50%, #EF4444 100%)',
+      ni: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 50%, #38BDF8 100%)',
+      ng: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #22C55E 100%)',
+      no: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #2563EB 100%)',
+      pk: 'linear-gradient(90deg, #22C55E 0%, #4ADE80 65%, #FFFFFF 100%)',
+      pa: 'linear-gradient(90deg, #FFFFFF 0%, #EF4444 50%, #2563EB 100%)',
+      py: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #2563EB 100%)',
+      pe: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #EF4444 100%)',
+      ph: 'linear-gradient(90deg, #2563EB 0%, #EF4444 55%, #FACC15 100%)',
+      pl: 'linear-gradient(90deg, #FFFFFF 0%, #F87171 50%, #EF4444 100%)',
+      pt: 'linear-gradient(90deg, #22C55E 0%, #FACC15 45%, #EF4444 75%)',
+      pr: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #2563EB 100%)',
+      re: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      ro: 'linear-gradient(90deg, #2563EB 0%, #FACC15 50%, #EF4444 100%)',
+      ru: 'linear-gradient(90deg, #FFFFFF 0%, #3B82F6 50%, #EF4444 100%)',
+      lc: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 52%, #FACC15 100%)',
+      mf: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      rs: 'linear-gradient(90deg, #EF4444 0%, #3B82F6 50%, #FFFFFF 100%)',
+      sl: 'linear-gradient(90deg, #22C55E 0%, #FFFFFF 50%, #38BDF8 100%)',
+      sk: 'linear-gradient(90deg, #FFFFFF 0%, #3B82F6 50%, #EF4444 100%)',
+      za: 'linear-gradient(90deg, #22C55E 0%, #FACC15 45%, #EF4444 72%, #3B82F6 100%)',
+      kr: 'linear-gradient(90deg, #FFFFFF 0%, #EF4444 50%, #2563EB 100%)',
+      es: 'linear-gradient(90deg, #EF4444 0%, #FACC15 50%, #EF4444 100%)',
+      lk: 'linear-gradient(90deg, #FACC15 0%, #F97316 45%, #22C55E 75%, #EF4444 100%)',
+      sr: 'linear-gradient(90deg, #22C55E 0%, #EF4444 50%, #FACC15 100%)',
+      se: 'linear-gradient(90deg, #3B82F6 0%, #FACC15 50%, #3B82F6 100%)',
+      ch: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #EF4444 100%)',
+      tz: 'linear-gradient(90deg, #22C55E 0%, #FACC15 50%, #38BDF8 100%)',
+      tt: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 50%, #94A3B8 100%)',
+      tn: 'linear-gradient(90deg, #EF4444 0%, #FFFFFF 55%, #F87171 100%)',
+      tc: 'linear-gradient(90deg, #2563EB 0%, #FACC15 52%, #EF4444 100%)',
+      ug: 'linear-gradient(90deg, #FACC15 0%, #EF4444 52%, #FDE047 100%)',
+      ua: 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 45%, #FACC15 75%)',
+      us: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #EF4444 100%)',
+      vi: 'linear-gradient(90deg, #FFFFFF 0%, #FACC15 52%, #2563EB 100%)',
+      uy: 'linear-gradient(90deg, #3B82F6 0%, #FFFFFF 50%, #FACC15 100%)',
+      uz: 'linear-gradient(90deg, #38BDF8 0%, #FFFFFF 50%, #22C55E 100%)',
+      ve: 'linear-gradient(90deg, #FACC15 0%, #2563EB 50%, #EF4444 100%)'
+    };
+
+    function getCountryFlagGradientCss(delegate) {
+      const iso = (delegate?.iso2 || '').toLowerCase();
+      return FLAG_NAME_GRADIENTS[iso] || 'linear-gradient(90deg, #FFFFFF 0%, #BAE6FD 50%, #F5C451 100%)';
+    }
+
+    function applyFlagTextGradient(el, delegate) {
+      if (!el) return;
+      const grad = getCountryFlagGradientCss(delegate);
+      el.style.backgroundImage = grad;
+      el.style.webkitBackgroundClip = 'text';
+      el.style.backgroundClip = 'text';
+      el.style.color = 'transparent';
+      el.classList.add('moving-country-name-gradient');
+    }
+
+    function renderBrandLogo() {
+      const container = document.getElementById('headerLogoContainer');
+      const preview = document.getElementById('logoModalPreview');
+      const activeSrc = appState.customLogoDataUrl || DEFAULT_MU75_LOGO_URL;
+      const markup = appState.customLogoDataUrl
+        ? `<img src="${escapeHtml(appState.customLogoDataUrl)}" alt="75th Miss Universe Official Logo" class="mu75-main-logo" />`
+        : DEFAULT_MU75_LOGO_SVG;
+      if (container) container.innerHTML = markup;
+      if (preview) {
+        preview.innerHTML = `<img src="${escapeHtml(activeSrc)}" alt="75th Miss Universe Official Logo" class="w-full h-full object-contain rounded-lg" onerror="this.outerHTML='<span class=\\'text-xs font-bold text-solargold\\'>MU75</span>';" />`;
+      }
+    }
+
+    function openLogoModal() {
+      renderBrandLogo();
+      document.getElementById('logoModal').classList.remove('hidden');
+    }
+
+    function closeLogoModal() {
+      document.getElementById('logoModal').classList.add('hidden');
+    }
+
+    function handleLogoFileChange(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const maxSide = 220;
+          const ratio = Math.min(maxSide / img.width, maxSide / img.height, 1);
+          canvas.width = Math.max(1, Math.round(img.width * ratio));
+          canvas.height = Math.max(1, Math.round(img.height * ratio));
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          appState.customLogoDataUrl = canvas.toDataURL('image/png');
+          saveStateToStorage(false);
+          renderBrandLogo();
+          showToast('Updated MU75 logo');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetDefaultLogo() {
+      appState.customLogoDataUrl = '';
+      saveStateToStorage(false);
+      renderBrandLogo();
+      showToast('Restored official MU75 logo');
+    }
+
+    function buildDefaultPuertoRicoBeachSvg() {
+      return 'https://images.pexels.com/photos/20526453/pexels-photo-20526453.jpeg?auto=compress&cs=tinysrgb&w=1600';
+    }
+
+    function buildStageCountryFallback(delegate) {
+      const safeNum = escapeXml(`#${delegate.num}`);
+      const safeCode = escapeXml((delegate.iso2 || delegate.country.slice(0, 3)).toUpperCase());
+      const safeFlagUrl = escapeXml(delegate.flagUrl || '');
+      const flagImageMarkup = safeFlagUrl
+        ? `<image href="${safeFlagUrl}" x="76" y="42" width="168" height="108" preserveAspectRatio="xMidYMid slice" clip-path="url(#diamondFlagClip)" />`
+        : '';
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220">
+        <defs>
+          <linearGradient id="stageCardGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#132247"/>
+            <stop offset="50%" stop-color="#070B19"/>
+            <stop offset="100%" stop-color="#223666"/>
+          </linearGradient>
+          <linearGradient id="diamondFacetStroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="48%" stop-color="#67E8F9"/>
+            <stop offset="100%" stop-color="#F5C451"/>
+          </linearGradient>
+          <clipPath id="diamondFlagClip">
+            <polygon points="160,34 236,96 160,158 84,96"/>
+          </clipPath>
+        </defs>
+        <rect width="320" height="220" rx="16" fill="url(#stageCardGrad)"/>
+        <polygon points="160,16 254,96 160,176 66,96" fill="rgba(186,230,253,0.08)" stroke="url(#diamondFacetStroke)" stroke-width="2.5"/>
+        ${flagImageMarkup}
+        <polygon points="160,34 236,96 160,158 84,96" fill="none" stroke="url(#diamondFacetStroke)" stroke-width="2"/>
+        <line x1="160" y1="34" x2="160" y2="158" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="1"/>
+        <line x1="84" y1="96" x2="236" y2="96" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="1"/>
+        <polygon points="160,22 165,28 160,34 155,28" fill="#FDE68A"/>
+        <polygon points="242,96 248,101 242,106 236,101" fill="#67E8F9"/>
+        <text x="160" y="198" font-family="monospace" font-size="13" font-weight="bold" fill="#FDE68A" text-anchor="middle">${safeNum} • ${safeCode} FLAG DIAMOND</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    function renderLiquidFlagHtml(delegate, sizeClass = 'w-7 h-5') {
+      const code = escapeHtml((delegate.iso2 || delegate.country.slice(0, 3)).toUpperCase());
+      if (delegate.flagUrl) {
+        return `<span class="liquid-flag-pill ${sizeClass}" title="${escapeHtml(delegate.country)}"><img src="${escapeHtml(delegate.flagUrl)}" alt="${escapeHtml(delegate.country)} flag" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" /><span style="display:none;font-size:9px;font-weight:700;color:#FAF9FF;">${code}</span></span>`;
+      }
+      return `<span class="liquid-flag-pill ${sizeClass}" title="${escapeHtml(delegate.country)}"><span style="font-size:9px;font-weight:700;color:#FAF9FF;">${code}</span></span>`;
+    }
+
+    function syncBackdropsForView(viewName, delegate) {
+      const stageBackdrop = document.getElementById('missUniverseStageBackdrop');
+      const beachBackdrop = document.getElementById('puertoRicoBeachBackdrop');
+      const beachImg = document.getElementById('puertoRicoBeachBackdropImg');
+      const flagBackdrop = document.getElementById('delegateFlagBackdrop');
+      const flagImg = document.getElementById('delegateFlagBackdropImg');
+
+      if (viewName === 'delegate-score' && delegate) {
+        if (stageBackdrop) stageBackdrop.classList.add('dimmed');
+        if (beachBackdrop) beachBackdrop.classList.remove('active');
+        if (flagBackdrop && flagImg) {
+          const src = delegate.flagHdUrl || delegate.flagUrl || buildStageCountryFallback(delegate);
+          flagImg.onerror = () => {
+            flagImg.onerror = null;
+            flagImg.src = buildStageCountryFallback(delegate);
+          };
+          flagImg.src = src;
+          flagBackdrop.classList.add('active');
+        }
+      } else {
+        if (stageBackdrop) stageBackdrop.classList.remove('dimmed');
+        if (flagBackdrop) flagBackdrop.classList.remove('active');
+        if (beachBackdrop && beachImg) {
+          if (viewName === 'score') {
+            const defaultBeach = buildDefaultPuertoRicoBeachSvg();
+            if (beachImg.getAttribute('src') !== defaultBeach) beachImg.src = defaultBeach;
+            beachBackdrop.classList.add('active');
+          } else {
+            beachBackdrop.classList.remove('active');
+          }
+        }
+      }
+    }
+
+    function getDelegateAvatarSrc(delegate) {
+      if (delegate.archivePhotoUrl) return delegate.archivePhotoUrl;
+      return buildStageCountryFallback(delegate);
+    }
+
+    function getFlagGlassBackground(delegate) {
+      const flagSrc = delegate.flagUrl || buildStageCountryFallback(delegate);
+      return `url("${flagSrc}")`;
+    }
+
+    function handleAvatarError(imgEl, delegateId) {
+      const delegate = DELEGATES.find(d => d.id === String(delegateId));
+      if (!delegate || !imgEl || imgEl.dataset.fallbackAttempted === 'true') return;
+      imgEl.dataset.fallbackAttempted = 'true';
+      imgEl.onerror = null;
+      imgEl.src = buildStageCountryFallback(delegate);
+      imgEl.classList.add('avatar-fallback');
+      if (imgEl.parentElement) {
+        imgEl.parentElement.classList.add('diamond-flag-fallback-card');
+      }
+    }
+
+    // =========================================================================
+    // 4. SCORING, DEDICATED SCORING PAGE & DELEGATES LIST RENDERING
+    // =========================================================================
+    function getFieldMax(field) {
+      if (field === 'swStyle' || field === 'egGlam') return 5;
+      return 15;
+    }
+
+    function updateScoreField(id, field, value) {
+      if (!appState.scores[id]) appState.scores[id] = {};
+      appState.scores[id][field] = clampNum(value, 0, getFieldMax(field));
+      saveStateToStorage(true);
+      syncCardSummary(id);
+      syncDedicatedScoringPage(id);
+      updateScoredProgressBadge();
+    }
+
+    function toggleTop30Check(id, event) {
+      if (event) event.stopPropagation();
+      if (!appState.scores[id]) appState.scores[id] = {};
+      appState.scores[id].top30 = !appState.scores[id].top30;
+      saveStateToStorage(true);
+      syncCardSummary(id);
+      syncDedicatedScoringPage(id);
+      updateScoredProgressBadge();
+      showToast(appState.scores[id].top30 ? `#${id} marked for Top 30` : `#${id} removed from Top 30`);
+    }
+
+    function updateDelegateNotes(id, value) {
+      if (!appState.scores[id]) appState.scores[id] = {};
+      appState.scores[id].notes = value;
+      saveStateToStorage(true);
+      updateScoredProgressBadge();
+    }
+
+    function saveScoresAndSyncCompare() {
+      saveStateToStorage(true);
+      showToast(`${appState.judgeName}'s scores saved & synced to Compare`);
+      switchView('share');
+    }
+
+    function openDelegateScoringPage(id, event) {
+      if (event) event.stopPropagation();
+      const target = DELEGATES.find(d => d.id === String(id)) || DELEGATES[0];
+      appState.activeDelegateId = target.id;
+      switchView('delegate-score');
+    }
+
+    function openFirstDelegateScoring() {
+      const targetId = appState.activeDelegateId || '1';
+      openDelegateScoringPage(targetId);
+    }
+
+    function backToDelegatesList() {
+      switchView('score');
+    }
+
+    function stepDelegateScoring(delta) {
+      const idx = DELEGATES.findIndex(d => d.id === appState.activeDelegateId);
+      const currentIndex = idx >= 0 ? idx : 0;
+      const nextIndex = (currentIndex + delta + DELEGATES.length) % DELEGATES.length;
+      appState.activeDelegateId = DELEGATES[nextIndex].id;
+      renderDedicatedScoringPage();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Touch navigation: swipe left/right on the delegate portrait area to move between contestants.
+    // Interactive controls (especially scoring sliders) retain their normal touch behavior.
+    function installHorizontalSwipeNavigation(element, onSwipe) {
+      if (!element || element.dataset.swipeReady === 'true') return;
+      element.dataset.swipeReady = 'true';
+      let startX = 0, startY = 0, tracking = false;
+      element.addEventListener('touchstart', (event) => {
+        if (event.touches.length !== 1) { tracking = false; return; }
+        const target = event.target;
+        if (target.closest('input, textarea, select, button, a, [role="slider"]')) {
+          tracking = false; return;
+        }
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+        tracking = true;
+      }, { passive: true });
+      element.addEventListener('touchend', (event) => {
+        if (!tracking || !event.changedTouches.length) return;
+        tracking = false;
+        const dx = event.changedTouches[0].clientX - startX;
+        const dy = event.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.25) onSwipe(dx < 0 ? 1 : -1);
+      }, { passive: true });
+      element.addEventListener('touchcancel', () => { tracking = false; }, { passive: true });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      installHorizontalSwipeNavigation(document.getElementById('delegateScoringPageContent'), stepDelegateScoring);
+      const portraitModal = document.getElementById('portraitLightboxModal');
+      installHorizontalSwipeNavigation(portraitModal, stepPortraitLightbox);
+    });
+
+    // Keyboard navigation works both on the scoring page and inside the enlarged portrait.
+    // Do not intercept arrow keys while the user is editing fields or operating sliders.
+    document.addEventListener('keydown', (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const target = event.target;
+      const tag = target && target.tagName ? target.tagName.toLowerCase() : '';
+      if (target && (target.isContentEditable || ['input', 'textarea', 'select'].includes(tag))) return;
+
+      const portraitModal = document.getElementById('portraitLightboxModal');
+      const portraitIsOpen = portraitModal && !portraitModal.classList.contains('hidden');
+      if (portraitIsOpen) {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          stepPortraitLightbox(event.key === 'ArrowLeft' ? -1 : 1);
+        } else if (event.key === 'Escape') {
+          event.preventDefault();
+          closePortraitLightbox();
+        }
+        return;
+      }
+
+      if (appState.activeView !== 'delegate-score') return;
+      if (tag === 'button' && !['prevDelegateBtn', 'nextDelegateBtn'].includes(target.id)) return;
+      if (document.querySelector('.modal:not(.hidden), [role="dialog"]:not(.hidden)')) return;
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        stepDelegateScoring(-1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        stepDelegateScoring(1);
+      }
+    });
+
+    function openPortraitLightbox(id, event) {
+      if (event) event.stopPropagation();
+      const target = DELEGATES.find(d => d.id === String(id)) || DELEGATES[0];
+      appState.lightboxDelegateId = target.id;
+      appState.lightboxFaceZoom = false;
+      renderPortraitLightbox();
+      document.getElementById('portraitLightboxModal').classList.remove('hidden');
+    }
+
+    function closePortraitLightbox(event) {
+      if (event && event.target && event.target.id !== 'portraitLightboxModal') return;
+      document.getElementById('portraitLightboxModal').classList.add('hidden');
+    }
+
+    function stepPortraitLightbox(delta) {
+      const idx = DELEGATES.findIndex(d => d.id === String(appState.lightboxDelegateId));
+      const currentIndex = idx >= 0 ? idx : 0;
+      const nextIndex = (currentIndex + delta + DELEGATES.length) % DELEGATES.length;
+      appState.lightboxDelegateId = DELEGATES[nextIndex].id;
+      renderPortraitLightbox();
+    }
+
+    function scoreFromPortraitLightbox() {
+      const targetId = appState.lightboxDelegateId || '1';
+      document.getElementById('portraitLightboxModal').classList.add('hidden');
+      openDelegateScoringPage(targetId);
+    }
+
+    function renderPortraitLightbox() {
+      const d = DELEGATES.find(item => item.id === String(appState.lightboxDelegateId)) || DELEGATES[0];
+      const s = getComputedScore(d.id);
+      const brushEl = document.getElementById('lightboxFlagBrushstroke');
+      const img = document.getElementById('lightboxPortraitImg');
+      if (brushEl) brushEl.style.backgroundImage = getFlagGlassBackground(d);
+      if (img) {
+        img.dataset.fallbackAttempted = 'false';
+        img.onerror = () => handleAvatarError(img, d.id);
+        img.src = getDelegateAvatarSrc(d);
+        img.alt = d.name;
+      }
+      const flagEl = document.getElementById('lightboxDelegateFlag');
+      if (flagEl) {
+        flagEl.outerHTML = `<span id="lightboxDelegateFlag">${renderLiquidFlagHtml(d, 'w-7 h-5')}</span>`;
+      }
+      document.getElementById('lightboxDelegateMeta').textContent = `DELEGATE #${d.num} OF 116 • ${d.country.toUpperCase()}`;
+
+      const titleCountry = document.getElementById('lightboxCountryTitle');
+      if (titleCountry) {
+        titleCountry.textContent = d.country;
+        applyFlagTextGradient(titleCountry, d);
+      }
+      document.getElementById('lightboxDelegateName').textContent = d.name;
+      document.getElementById('lightboxTotalPts').textContent = s.totalPts;
+    }
+
+    function syncCardSummary(id) {
+      const s = getComputedScore(id);
+      const totalEl = document.getElementById(`total-pts-${id}`);
+      const ncEl = document.getElementById(`costume-pts-${id}`);
+      const swEl = document.getElementById(`swimsuit-pts-${id}`);
+      const egEl = document.getElementById(`gown-pts-${id}`);
+      const cutBadge = document.getElementById(`cut85-badge-${id}`);
+      const checkBtn = document.getElementById(`top30-btn-${id}`);
+      const cardEl = document.getElementById(`delegate-card-${id}`);
+
+      if (totalEl) totalEl.textContent = s.totalPts;
+      if (ncEl) ncEl.textContent = `${s.costumePts}/30`;
+      if (swEl) swEl.textContent = `${s.swimsuitPts}/35`;
+      if (egEl) egEl.textContent = `${s.gownPts}/35`;
+
+      if (cutBadge) {
+        cutBadge.classList.toggle('hidden', s.totalPts < 85);
+      }
+
+      if (checkBtn) {
+        checkBtn.textContent = s.top30 ? '◆ Top 30' : '+ Top 30';
+        checkBtn.className = s.top30
+          ? 'px-2 py-0.5 rounded-md text-[11px] bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 transition active:scale-95'
+          : 'px-2 py-0.5 rounded-md text-[11px] stage-glass-facet text-mutedslate hover:text-silvermist transition active:scale-95';
+      }
+
+      if (cardEl) {
+        const isHighlighted = s.totalPts >= 85 || s.top30;
+        cardEl.className = isHighlighted
+          ? 'stage-glass-highlight rounded-2xl overflow-hidden transition cursor-pointer'
+          : 'stage-glass rounded-2xl overflow-hidden transition cursor-pointer';
+      }
+    }
+
+    function syncDedicatedScoringPage(id) {
+      if (String(id) !== String(appState.activeDelegateId)) return;
+      const s = getComputedScore(id);
+      const pageTotal = document.getElementById('page-total-pts');
+      const pageNc = document.getElementById('page-nc-pts');
+      const pageSw = document.getElementById('page-sw-pts');
+      const pageEg = document.getElementById('page-eg-pts');
+      const pageNcBar = document.getElementById('page-nc-bar');
+      const pageSwBar = document.getElementById('page-sw-bar');
+      const pageEgBar = document.getElementById('page-eg-bar');
+      const pageTiebreaker = document.getElementById('page-tiebreaker-readout');
+      const pageTop30Btn = document.getElementById('page-top30-btn');
+
+      if (pageTotal) pageTotal.textContent = s.totalPts;
+      if (pageNc) pageNc.textContent = `${s.costumePts}/30`;
+      if (pageSw) pageSw.textContent = `${s.swimsuitPts}/35`;
+      if (pageEg) pageEg.textContent = `${s.gownPts}/35`;
+      if (pageNcBar) pageNcBar.style.width = `${Math.round((s.costumePts / 30) * 100)}%`;
+      if (pageSwBar) pageSwBar.style.width = `${Math.round((s.swimsuitPts / 35) * 100)}%`;
+      if (pageEgBar) pageEgBar.style.width = `${Math.round((s.gownPts / 35) * 100)}%`;
+      if (pageTiebreaker) pageTiebreaker.textContent = `${s.gownPts} pts`;
+
+      if (pageTop30Btn) {
+        pageTop30Btn.textContent = s.top30 ? '◆ Top 30 Pick' : '☐ Add to Top 30';
+        pageTop30Btn.className = s.top30
+          ? 'px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-solargold/50 shadow transition active:scale-95'
+          : 'px-3.5 py-2 rounded-xl text-xs font-semibold stage-glass-facet text-icebeam hover:border-solargold/60 transition active:scale-95';
+      }
+
+      const fields = ['ncCraft', 'ncStage', 'swWalk', 'swConf', 'swStyle', 'egGown', 'egGrace', 'egGlam'];
+      fields.forEach(f => {
+        const labelEl = document.getElementById(`page-val-${f}`);
+        if (labelEl) labelEl.textContent = s[f];
+        const sliderEl = document.getElementById(`page-slider-${f}`);
+        if (sliderEl && Number(sliderEl.value) !== s[f]) sliderEl.value = s[f];
+      });
+    }
+
+    function applyQuickRoundPreset(id, presetName) {
+      const presets = {
+        standout: { ncCraft: 14, ncStage: 14, swWalk: 14, swConf: 14, swStyle: 5, egGown: 14, egGrace: 15, egGlam: 5 },
+        strong: { ncCraft: 13, ncStage: 13, swWalk: 13, swConf: 13, swStyle: 4, egGown: 13, egGrace: 13, egGlam: 4 },
+        solid: { ncCraft: 11, ncStage: 11, swWalk: 11, swConf: 11, swStyle: 4, egGown: 11, egGrace: 11, egGlam: 4 },
+        clear: { ncCraft: 0, ncStage: 0, swWalk: 0, swConf: 0, swStyle: 0, egGown: 0, egGrace: 0, egGlam: 0 }
+      };
+      const chosen = presets[presetName];
+      if (!chosen) return;
+      const existingNotes = (appState.scores[id] && appState.scores[id].notes) || '';
+      const existingTop30 = Boolean(appState.scores[id] && appState.scores[id].top30);
+      appState.scores[id] = {
+        ...chosen,
+        top30: presetName === 'standout' ? true : existingTop30,
+        notes: existingNotes
+      };
+      saveStateToStorage(true);
+      syncCardSummary(id);
+      syncDedicatedScoringPage(id);
+      updateScoredProgressBadge();
+      const labels = {
+        standout: 'Applied Standout preset (94/100) & marked Top 30',
+        strong: 'Applied Strong Contender preset (86/100)',
+        solid: 'Applied Solid Runway preset (74/100)',
+        clear: 'Reset scores for this delegate'
+      };
+      showToast(labels[presetName] || 'Updated score');
+    }
+
+    function renderDedicatedScoringPage() {
+      const container = document.getElementById('delegateScoringPageContent');
+      if (!container) return;
+      const d = DELEGATES.find(item => item.id === String(appState.activeDelegateId)) || DELEGATES[0];
+      appState.activeDelegateId = d.id;
+      syncBackdropsForView('delegate-score', d);
+      const s = getComputedScore(d.id);
+      const ncPct = Math.round((s.costumePts / 30) * 100);
+      const swPct = Math.round((s.swimsuitPts / 35) * 100);
+      const egPct = Math.round((s.gownPts / 35) * 100);
+
+      container.innerHTML = `
+        <!-- Editorial Spotlight Stage Header -->
+        <div class="delegate-spotlight-stage shiny-sheen-card rounded-3xl p-4 sm:p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 min-w-0">
+              ${renderLiquidFlagHtml(d, 'w-7 h-5')}
+              <span class="px-2.5 py-0.5 rounded-full bg-white/10 border border-solargold/40 text-[11px] font-mono text-solargold shrink-0">
+                DELEGATE #${d.num} / 116
+              </span>
+              <span class="hidden sm:inline text-xs text-mutedslate truncate">
+                Preliminary Evaluation Sheet
+              </span>
+            </div>
+
+            <button
+              id="page-top30-btn"
+              type="button"
+              onclick="toggleTop30Check('${d.id}', event)"
+              class="${s.top30
+                ? 'px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-solargold/50 shadow transition active:scale-95'
+                : 'px-3.5 py-2 rounded-xl text-xs font-semibold stage-glass-facet text-icebeam hover:border-solargold/60 transition active:scale-95'}"
+            >
+              ${s.top30 ? '◆ Top 30 Pick' : '☐ Add to Top 30'}
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+            <!-- Portrait Frame -->
+            <div class="md:col-span-5 flex flex-col items-center">
+              <div
+                onclick="openPortraitLightbox('${d.id}', event)"
+                title="Tap to open full-screen portrait"
+                class="mu75-poster-frame relative w-52 h-72 sm:w-56 sm:h-80 rounded-2xl shrink-0 border border-solargold/55 shadow-2xl cursor-zoom-in group"
+              >
+                <div class="mu75-poster-brushstroke" style="background-image: ${getFlagGlassBackground(d)};"></div>
+                <img
+                  id="country-showcase-img-${d.id}"
+                  src="${getDelegateAvatarSrc(d)}"
+                  alt="${escapeHtml(d.name)}"
+                  onerror="handleAvatarError(this, '${d.id}')"
+                  class="mu75-poster-portrait group-hover:scale-105"
+                />
+                <div class="mu75-poster-vignette"></div>
+                <span class="absolute top-2.5 left-2.5 z-10 px-2 py-0.5 rounded-md bg-stagevoid/85 text-[11px] font-mono text-icebeam border border-white/25">
+                  #${d.num}
+                </span>
+                <span class="absolute bottom-2.5 right-2.5 z-10 px-2.5 py-1 rounded-lg bg-stagevoid/85 backdrop-blur-sm text-[11px] font-medium text-icebeam border border-white/25">
+                  ⤢ Expand
+                </span>
+              </div>
+            </div>
+
+            <!-- Delegate Identity, Total Score & Round Breakdown Bars -->
+            <div class="md:col-span-7 space-y-4 text-center md:text-left">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+                <div class="delegate-identity-block space-y-2">
+                  <div class="delegate-identity-line flex gap-2">
+                    ${renderLiquidFlagHtml(d, 'w-7 h-5')}
+                    <h2 data-flag-gradient="true" class="delegate-country-name font-display font-extrabold uppercase">
+                      ${escapeHtml(d.country)}
+                    </h2>
+                  </div>
+                  <p class="delegate-contestant-name font-editorial italic text-silvermist">
+                    ${escapeHtml(d.name)}
+                  </p>
+                </div>
+
+                <div class="mx-auto sm:mx-0 shrink-0 stage-glass-highlight rounded-2xl px-4 py-2.5 text-center min-w-[104px]">
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-mutedslate">Total Score</div>
+                  <div class="leading-tight mt-0.5">
+                    <span id="page-total-pts" class="text-2xl sm:text-3xl font-extrabold text-solargold">${s.totalPts}</span>
+                    <span class="text-xs text-mutedslate">/100</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3-Round Score Breakdown Bars -->
+              <div class="space-y-2.5 pt-1">
+                <div class="round-score-pill rounded-xl p-2.5 space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-cyanbeam">National Costume</span>
+                    <span id="page-nc-pts" class="font-mono font-bold text-icebeam">${s.costumePts}/30</span>
+                  </div>
+                  <div class="h-1.5 w-full rounded-full bg-stagevoid/90 overflow-hidden">
+                    <div id="page-nc-bar" style="width:${ncPct}%" class="h-full rounded-full bg-gradient-to-r from-cyanbeam to-cobalt transition-all duration-200"></div>
+                  </div>
+                </div>
+
+                <div class="round-score-pill rounded-xl p-2.5 space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-cyanbeam">Swimsuit Round</span>
+                    <span id="page-sw-pts" class="font-mono font-bold text-icebeam">${s.swimsuitPts}/35</span>
+                  </div>
+                  <div class="h-1.5 w-full rounded-full bg-stagevoid/90 overflow-hidden">
+                    <div id="page-sw-bar" style="width:${swPct}%" class="h-full rounded-full bg-gradient-to-r from-sky-400 to-sapphire transition-all duration-200"></div>
+                  </div>
+                </div>
+
+                <div class="round-score-pill rounded-xl p-2.5 space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-solargold">Evening Gown (Tiebreaker)</span>
+                    <span id="page-eg-pts" class="font-mono font-bold text-solargold">${s.gownPts}/35</span>
+                  </div>
+                  <div class="h-1.5 w-full rounded-full bg-stagevoid/90 overflow-hidden">
+                    <div id="page-eg-bar" style="width:${egPct}%" class="h-full rounded-full bg-gradient-to-r from-solargold via-amber-300 to-orchidglow transition-all duration-200"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Watch-Party Score Presets -->
+              <div class="pt-1 flex flex-wrap items-center justify-center md:justify-start gap-1.5 text-[11px]">
+                <span class="text-mutedslate mr-1">Quick fill:</span>
+                <button type="button" onclick="applyQuickRoundPreset('${d.id}', 'standout')" class="px-2.5 py-1 rounded-lg bg-solargold/15 hover:bg-solargold/25 border border-solargold/45 text-solargold font-semibold transition active:scale-95">
+                  Standout (94)
+                </button>
+                <button type="button" onclick="applyQuickRoundPreset('${d.id}', 'strong')" class="px-2.5 py-1 rounded-lg stage-glass-facet hover:border-cyanbeam/50 text-icebeam transition active:scale-95">
+                  Strong (86)
+                </button>
+                <button type="button" onclick="applyQuickRoundPreset('${d.id}', 'solid')" class="px-2.5 py-1 rounded-lg stage-glass-facet hover:border-cyanbeam/50 text-silvermist transition active:scale-95">
+                  Solid (74)
+                </button>
+                <button type="button" onclick="applyQuickRoundPreset('${d.id}', 'clear')" class="px-2.5 py-1 rounded-lg stage-glass-facet hover:border-rose-400/50 text-mutedslate hover:text-rose-200 transition active:scale-95">
+                  Clear
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-white/15 flex flex-wrap items-center justify-between gap-2 text-xs text-mutedslate">
+            <span>Tiebreaker Weight: <strong id="page-tiebreaker-readout" class="text-solargold font-mono">${s.gownPts} pts</strong></span>
+            <span>Top 30 Cut Benchmark: <strong class="text-cyanbeam font-mono">85+ pts</strong></span>
+          </div>
+        </div>
+
+        <!-- 1. National Costume (30 pts) -->
+        <div class="stage-glass rounded-2xl p-4 space-y-3.5">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-display text-base sm:text-lg font-bold uppercase text-cyanbeam">
+              1. National Costume (30 Pts)
+            </h3>
+            <span class="text-xs text-mutedslate">Craft (15) + Stage (15)</span>
+          </div>
+          ${renderPageSliderRow(d.id, 'ncCraft', 'Craftsmanship & Design (Artistry, detail, storytelling)', s.ncCraft, 15, false)}
+          ${renderPageSliderRow(d.id, 'ncStage', 'Stage Projection (Confidence, movement, impact)', s.ncStage, 15, false)}
+        </div>
+
+        <!-- 2. Swimsuit (35 pts) -->
+        <div class="stage-glass rounded-2xl p-4 space-y-3.5">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-display text-base sm:text-lg font-bold uppercase text-cyanbeam">
+              2. Swimsuit Round (35 Pts)
+            </h3>
+            <span class="text-xs text-mutedslate">Walk (15) + Conf. (15) + Fit (5)</span>
+          </div>
+          ${renderPageSliderRow(d.id, 'swWalk', 'Runway Walk (Pace, turns, energy, poise)', s.swWalk, 15, false)}
+          ${renderPageSliderRow(d.id, 'swConf', 'Confidence & Presence (Charisma, stage command)', s.swConf, 15, false)}
+          ${renderPageSliderRow(d.id, 'swStyle', 'Styling & Fit (Swimsuit look & hair)', s.swStyle, 5, false)}
+        </div>
+
+        <!-- 3. Evening Gown (35 pts) -->
+        <div class="stage-glass-highlight rounded-2xl p-4 space-y-3.5">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-display text-base sm:text-lg font-bold uppercase text-solargold">
+              3. Evening Gown (35 Pts • Tiebreaker)
+            </h3>
+            <span class="text-xs text-mutedslate">Gown (15) + Grace (15) + Glam (5)</span>
+          </div>
+          ${renderPageSliderRow(d.id, 'egGown', 'Gown & Fit (Silhouette, movement, fabric)', s.egGown, 15, true)}
+          ${renderPageSliderRow(d.id, 'egGrace', 'Grace & Elegance (Regal poise & command)', s.egGrace, 15, true)}
+          ${renderPageSliderRow(d.id, 'egGlam', 'Glam & Styling (Hair, makeup & jewelry)', s.egGlam, 5, true)}
+        </div>
+
+        <!-- Runway, Gown & Styling Notes -->
+        <div class="stage-glass rounded-2xl p-4">
+          <label for="page-notes-${d.id}" class="block font-display text-base font-bold uppercase text-icebeam mb-1.5">
+            Runway, Gown &amp; Styling Notes
+          </label>
+          <textarea
+            id="page-notes-${d.id}"
+            rows="3"
+            oninput="updateDelegateNotes('${d.id}', this.value)"
+            placeholder="Write notes on costume, walk, evening gown, styling, or Top 30 potential..."
+            class="w-full stage-glass-facet focus:border-cyanbeam rounded-xl p-3 text-sm text-silvermist placeholder-mutedslate focus:outline-none leading-relaxed transition"
+          >${escapeHtml(s.notes)}</textarea>
+        </div>
+      `;
+
+      container.querySelectorAll('[data-flag-gradient="true"]').forEach(el => applyFlagTextGradient(el, d));
+    }
+
+    function renderPageSliderRow(id, field, label, currentVal, maxVal, isGown) {
+      return `
+        <div>
+          <div class="flex items-center justify-between text-xs sm:text-sm mb-1.5 gap-2">
+            <span class="text-silvermist leading-snug">${label}</span>
+            <span class="font-mono text-icebeam shrink-0">
+              <span id="page-val-${field}">${currentVal}</span>/${maxVal}
+            </span>
+          </div>
+          <input
+            id="page-slider-${field}"
+            type="range"
+            min="0"
+            max="${maxVal}"
+            step="1"
+            value="${currentVal}"
+            oninput="updateScoreField('${id}', '${field}', this.value)"
+            class="w-full ${isGown ? 'gown-slider' : ''}"
+          />
+        </div>
+      `;
+    }
+
+    function renderDelegatesList() {
+      const container = document.getElementById('delegatesContainer');
+      const emptyBox = document.getElementById('emptyDelegatesBox');
+      if (!container || !emptyBox) return;
+      const q = appState.searchQuery.trim().toLowerCase();
+
+      const filtered = DELEGATES.filter(d => {
+        const s = getComputedScore(d.id);
+        const matchesSearch = !q ||
+          d.country.toLowerCase().includes(q) ||
+          d.name.toLowerCase().includes(q) ||
+          String(d.num) === q ||
+          d.padded.includes(q);
+        if (!matchesSearch) return false;
+
+        if (appState.filter === 'scored') return s.hasEntry;
+        if (appState.filter === 'unscored') return !s.hasEntry;
+        if (appState.filter === 'top30') return s.top30;
+        if (appState.filter === 'cut85') return s.totalPts >= 85;
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        emptyBox.classList.remove('hidden');
+        return;
+      }
+
+      emptyBox.classList.add('hidden');
+      container.innerHTML = filtered.map(d => {
+        const s = getComputedScore(d.id);
+        const isHighlighted = s.totalPts >= 85 || s.top30;
+        const cardClass = isHighlighted
+          ? 'stage-glass-highlight rounded-2xl overflow-hidden transition cursor-pointer'
+          : 'stage-glass rounded-2xl overflow-hidden transition cursor-pointer';
+
+        return `
+          <article id="delegate-card-${d.id}" onclick="openDelegateScoringPage('${d.id}', event)" class="${cardClass}">
+            <div class="p-3 flex items-center gap-3">
+              <div
+                onclick="openPortraitLightbox('${d.id}', event)"
+                title="Tap to view portrait"
+                class="mu75-poster-frame relative w-16 h-20 sm:w-20 sm:h-24 rounded-xl shrink-0 border border-white/30 cursor-zoom-in"
+              >
+                <div class="mu75-poster-brushstroke" style="background-image: ${getFlagGlassBackground(d)};"></div>
+                <img
+                  id="avatar-img-${d.id}"
+                  src="${getDelegateAvatarSrc(d)}"
+                  alt="${escapeHtml(d.name)}"
+                  loading="lazy"
+                  onerror="handleAvatarError(this, '${d.id}')"
+                  class="mu75-poster-portrait"
+                />
+                <div class="mu75-poster-vignette"></div>
+                <span class="absolute top-1 left-1 z-10 px-1 rounded bg-stagevoid/85 text-[9px] font-mono text-icebeam border border-white/20">
+                  #${d.num}
+                </span>
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1.5">
+                  ${renderLiquidFlagHtml(d, 'w-6 h-4')}
+                  <h2 onclick="openDelegateScoringPage('${d.id}', event)" class="font-display text-base sm:text-lg font-bold text-icebeam uppercase whitespace-normal break-words leading-tight hover:text-cyanbeam transition">
+                    ${escapeHtml(d.country)}
+                  </h2>
+                  <span id="cut85-badge-${d.id}" class="${s.totalPts >= 85 ? '' : 'hidden'} text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-solargold border border-solargold/45 shrink-0">
+                    85+
+                  </span>
+                </div>
+                <div onclick="openDelegateScoringPage('${d.id}', event)" class="text-xs sm:text-sm font-semibold text-silvermist whitespace-normal break-words leading-snug mt-0.5 hover:text-icebeam transition">
+                  ${escapeHtml(d.name)}
+                </div>
+                <div class="flex items-center gap-2 mt-1.5 text-[11px] text-mutedslate">
+                  <span class="truncate">
+                    NC <strong id="costume-pts-${d.id}" class="text-cyanbeam">${s.costumePts}/30</strong> •
+                    SW <strong id="swimsuit-pts-${d.id}" class="text-cyanbeam">${s.swimsuitPts}/35</strong> •
+                    EG <strong id="gown-pts-${d.id}" class="text-solargold">${s.gownPts}/35</strong>
+                  </span>
+                  <button
+                    id="top30-btn-${d.id}"
+                    type="button"
+                    onclick="toggleTop30Check('${d.id}', event)"
+                    class="ml-auto shrink-0 ${s.top30
+                      ? 'px-2 py-0.5 rounded-md text-[11px] bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 transition active:scale-95'
+                      : 'px-2 py-0.5 rounded-md text-[11px] stage-glass-facet text-mutedslate hover:text-silvermist transition active:scale-95'}"
+                  >
+                    ${s.top30 ? '◆ Top 30' : '+ Top 30'}
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-end justify-center gap-0.5 shrink-0 pl-1">
+                <div class="text-right leading-none">
+                  <span id="total-pts-${d.id}" class="text-lg sm:text-2xl font-bold text-icebeam">${s.totalPts}</span>
+                  <span class="text-[11px] sm:text-xs text-mutedslate font-normal">/100</span>
+                </div>
+                <span class="text-[11px] text-cyanbeam">Score →</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // 5. TOP 30 LEADERBOARD WITH EVENING GOWN > SWIMSUIT TIEBREAKER
+    // =========================================================================
+    function getSortedLeaderboardForBallot(scoresMap) {
+      return DELEGATES.map(d => ({
+        ...d,
+        score: getComputedScoreFromMap(scoresMap, d.id)
+      })).sort((a, b) => {
+        if (b.score.totalPts !== a.score.totalPts) return b.score.totalPts - a.score.totalPts;
+        if (b.score.gownPts !== a.score.gownPts) return b.score.gownPts - a.score.gownPts;
+        if (b.score.swimsuitPts !== a.score.swimsuitPts) return b.score.swimsuitPts - a.score.swimsuitPts;
+        if (b.score.costumePts !== a.score.costumePts) return b.score.costumePts - a.score.costumePts;
+        return a.num - b.num;
+      });
+    }
+
+    function getSortedLeaderboard() {
+      return getSortedLeaderboardForBallot(appState.scores);
+    }
+
+    function buildTop30EntriesForBallot(sortedList, standoutsObj) {
+      const fanId = standoutsObj && standoutsObj.fanVote ? String(standoutsObj.fanVote) : '';
+      const pool = fanId
+        ? sortedList.filter(item => item.id !== fanId)
+        : sortedList;
+      const top29 = pool.slice(0, fanId ? 29 : 30);
+      if (!fanId) return top29;
+      const fanDelegate = sortedList.find(item => item.id === fanId);
+      return fanDelegate ? [...top29, fanDelegate] : sortedList.slice(0, 30);
+    }
+
+    function buildTop30Entries(sortedList) {
+      return buildTop30EntriesForBallot(sortedList, appState.standouts);
+    }
+
+    function getWatchPartyAggregateLeaderboard() {
+      const activeKey = normalizeJudgeKey(appState.judgeName);
+      const ballots = Object.entries(appState.publishedJudges || {}).map(([key, ballot]) => ({
+        key,
+        scores: key === activeKey ? appState.scores : (ballot.scores || {})
+      }));
+      if (!ballots.some(b => b.key === activeKey)) {
+        ballots.push({ key: activeKey, scores: appState.scores });
+      }
+
+      return DELEGATES.map(delegate => {
+        const totals = { totalPts: 0, gownPts: 0, swimsuitPts: 0, costumePts: 0 };
+        let judgeCount = 0;
+        ballots.forEach(ballot => {
+          const score = getComputedScoreFromMap(ballot.scores, delegate.id);
+          if (!score.hasEntry) return;
+          totals.totalPts += score.totalPts;
+          totals.gownPts += score.gownPts;
+          totals.swimsuitPts += score.swimsuitPts;
+          totals.costumePts += score.costumePts;
+          judgeCount += 1;
+        });
+        return {
+          ...delegate,
+          judgeCount,
+          average: judgeCount ? totals.totalPts / judgeCount : 0,
+          gownAverage: judgeCount ? totals.gownPts / judgeCount : 0,
+          swimsuitAverage: judgeCount ? totals.swimsuitPts / judgeCount : 0,
+          costumeAverage: judgeCount ? totals.costumePts / judgeCount : 0
+        };
+      }).filter(d => d.judgeCount > 0).sort((a, b) =>
+        (b.average - a.average) ||
+        (b.gownAverage - a.gownAverage) ||
+        (b.swimsuitAverage - a.swimsuitAverage) ||
+        (b.costumeAverage - a.costumeAverage) ||
+        (a.num - b.num)
+      );
+    }
+
+    function renderWatchPartyFinalResults() {
+      const ranked = getWatchPartyAggregateLeaderboard();
+      const countEl = document.getElementById('aggregateJudgeCount');
+      const podiumEl = document.getElementById('aggregatePodium');
+      const top10El = document.getElementById('aggregateTop10');
+      const top30El = document.getElementById('aggregateTop30');
+      if (!podiumEl || !top10El || !top30El) return;
+
+      const judgeKeys = new Set(Object.keys(appState.publishedJudges || {}));
+      judgeKeys.add(normalizeJudgeKey(appState.judgeName));
+      if (countEl) countEl.textContent = `Combined average from ${judgeKeys.size} saved ${judgeKeys.size === 1 ? 'judge' : 'judges'} • ${ranked.length} delegates with scores`;
+
+      const podiumItems = [
+        { rank: 2, label: '1ST RUNNER-UP', style: 'border-slate-300/40 bg-slate-200/10', crown: '◇' },
+        { rank: 1, label: 'WINNER', style: 'border-solargold/65 bg-solargold/10 sm:-translate-y-1', crown: '♛' },
+        { rank: 3, label: '2ND RUNNER-UP', style: 'border-amber-700/45 bg-amber-800/10', crown: '◇' }
+      ];
+      podiumEl.innerHTML = podiumItems.map(slot => {
+        const d = ranked[slot.rank - 1];
+        if (!d) return `<div class="rounded-xl border border-white/10 p-3 text-center text-xs text-mutedslate">${slot.label}<div class="mt-2">Waiting for scores</div></div>`;
+        return `<div class="rounded-xl border ${slot.style} p-3 text-center shadow-lg">
+          <div class="text-[10px] font-bold tracking-[.16em] text-solargold">${slot.crown} ${slot.label}</div>
+          <div class="mt-2 flex justify-center">${renderLiquidFlagHtml(d, 'w-7 h-5')}</div>
+          <div class="mt-1 text-sm font-extrabold text-icebeam">${escapeHtml(d.country)}</div>
+          <div class="text-[11px] text-mutedslate">${escapeHtml(d.name)}</div>
+          <div class="mt-2 font-display text-2xl font-bold text-solargold">${d.average.toFixed(2)}<span class="text-xs text-mutedslate">/100</span></div>
+          <div class="text-[10px] text-mutedslate">${d.judgeCount} judge${d.judgeCount === 1 ? '' : 's'} scored</div>
+        </div>`;
+      }).join('');
+
+      const rowHtml = (d, idx) => `<div class="rounded-lg border ${idx === 0 ? 'border-solargold/45 bg-solargold/10' : 'border-white/10 bg-stagevoid/45'} px-2.5 py-2 flex items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="font-mono font-bold ${idx < 3 ? 'text-solargold' : 'text-cyanbeam'} w-6 shrink-0">#${idx + 1}</span>
+          ${renderLiquidFlagHtml(d, 'w-5 h-3.5')}
+          <div class="min-w-0"><div class="font-bold text-icebeam truncate">${escapeHtml(d.country)}</div><div class="text-[10px] text-mutedslate truncate">${escapeHtml(d.name)}</div></div>
+        </div>
+        <div class="text-right shrink-0"><div class="font-mono font-bold text-solargold">${d.average.toFixed(2)}</div><div class="text-[9px] text-mutedslate">${d.judgeCount} score${d.judgeCount === 1 ? '' : 's'}</div></div>
+      </div>`;
+      top10El.innerHTML = ranked.slice(0, 10).map(rowHtml).join('') || '<p class="text-xs text-mutedslate">Scores will appear here once judges begin scoring delegates.</p>';
+      top30El.innerHTML = ranked.slice(0, 30).map(rowHtml).join('') || '<p class="text-xs text-mutedslate">No submitted scores yet.</p>';
+    }
+
+    function renderTop30View() {
+      publishCurrentJudgeToComparePool(false);
+      renderWatchPartyFinalResults();
+      const sorted = getSortedLeaderboard();
+
+      const delegateOpts = `<option value="">-- Select Delegate --</option>` +
+        DELEGATES.map(d => `<option value="${d.id}">#${d.num} • ${escapeHtml(d.country)} — ${escapeHtml(d.name)}</option>`).join('');
+
+      ['standoutCostumeSelect', 'standoutSwimsuitSelect', 'standoutGownSelect'].forEach(selId => {
+        const el = document.getElementById(selId);
+        if (el) el.innerHTML = delegateOpts;
+      });
+
+      const fanSelect = document.getElementById('fanVoteSlotSelect');
+      if (fanSelect) {
+        fanSelect.innerHTML = `<option value="">-- Auto (#30 by Score &amp; Tiebreaker) --</option>` +
+          DELEGATES.map(d => `<option value="${d.id}">#${d.num} • ${escapeHtml(d.country)} — ${escapeHtml(d.name)}</option>`).join('');
+      }
+
+      const bestCostume = [...sorted].sort((a, b) => b.score.costumePts - a.score.costumePts)[0];
+      const bestSwim = [...sorted].sort((a, b) => b.score.swimsuitPts - a.score.swimsuitPts)[0];
+      const bestGown = [...sorted].sort((a, b) => b.score.gownPts - a.score.gownPts)[0];
+
+      const costumeSelect = document.getElementById('standoutCostumeSelect');
+      const swimsuitSelect = document.getElementById('standoutSwimsuitSelect');
+      const gownSelect = document.getElementById('standoutGownSelect');
+      const fanVoteSelect = document.getElementById('fanVoteSlotSelect');
+
+      if (costumeSelect) {
+        costumeSelect.value =
+          appState.standouts.costume || (bestCostume && bestCostume.score.costumePts > 0 ? bestCostume.id : '');
+      }
+      if (swimsuitSelect) {
+        swimsuitSelect.value =
+          appState.standouts.swimsuit || (bestSwim && bestSwim.score.swimsuitPts > 0 ? bestSwim.id : '');
+      }
+      if (gownSelect) {
+        gownSelect.value =
+          appState.standouts.gown || (bestGown && bestGown.score.gownPts > 0 ? bestGown.id : '');
+      }
+      if (fanVoteSelect) {
+        fanVoteSelect.value = appState.standouts.fanVote || '';
+      }
+
+      const top30 = buildTop30Entries(sorted);
+      const listEl = document.getElementById('top30ListContainer');
+      if (listEl) {
+        listEl.innerHTML = top30.map((d, index) => {
+          const rank = index + 1;
+          let tierLabel = `#${rank}`;
+          let badgeClass = 'stage-glass-facet text-icebeam';
+          let rowClass = 'stage-glass-facet';
+
+          if (rank === 1) {
+            tierLabel = '#1 ◆';
+            badgeClass = 'bg-white/15 text-solargold border-solargold/60 font-bold';
+            rowClass = 'stage-glass-highlight';
+          } else if (rank <= 5) {
+            tierLabel = `#${rank} T5`;
+            badgeClass = 'bg-sapphire/70 text-icebeam border-white/35';
+            rowClass = 'stage-glass';
+          } else if (rank <= 12) {
+            tierLabel = `#${rank} T12`;
+            badgeClass = 'bg-white/10 text-cyanbeam border-cyanbeam/35';
+          } else if (rank === 30 && appState.standouts.fanVote) {
+            tierLabel = '#30 FAN';
+            badgeClass = 'bg-cobalt text-silvermist border-white/40';
+          }
+
+          return `
+            <div onclick="openDelegateScoringPage('${d.id}')" class="rounded-xl p-2 ${rowClass} flex items-center justify-between gap-2 cursor-pointer hover:border-solargold/55 transition">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="px-1.5 py-0.5 rounded-md border text-[10px] shrink-0 ${badgeClass}">
+                  ${tierLabel}
+                </span>
+                <img
+                  src="${getDelegateAvatarSrc(d)}"
+                  alt="${escapeHtml(d.name)}"
+                  onerror="handleAvatarError(this, '${d.id}')"
+                  class="w-9 h-7 rounded-lg object-cover border border-white/25 shrink-0"
+                />
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5 text-xs text-silvermist truncate">
+                    ${renderLiquidFlagHtml(d, 'w-5 h-3.5')}
+                    <strong class="font-bold text-icebeam truncate">${escapeHtml(d.country)}</strong>
+                    <span class="text-mutedslate">#${d.num}</span>
+                  </div>
+                  <div class="text-[11px] text-mutedslate truncate">${escapeHtml(d.name)}</div>
+                </div>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-sm font-bold text-solargold">${d.score.totalPts}<span class="text-[10px] text-mutedslate font-normal">/100</span></div>
+                <div class="text-[10px] text-mutedslate">EG:${d.score.gownPts} • SW:${d.score.swimsuitPts}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const top30Ids = new Set(top30.map(item => item.id));
+      const alternates = sorted.filter(item => !top30Ids.has(item.id)).slice(0, 5);
+      const bubbleEl = document.getElementById('bubbleAlternatesContainer');
+      if (bubbleEl) {
+        bubbleEl.innerHTML = alternates.map((d, idx) => `
+          <div onclick="openDelegateScoringPage('${d.id}')" class="rounded-xl stage-glass-facet px-3 py-2 flex items-center justify-between gap-2 text-xs cursor-pointer hover:border-cyanbeam/45 transition">
+            <div class="min-w-0">
+              <div class="flex items-center gap-1.5 truncate">
+                <span class="font-mono text-cyanbeam">#${31 + idx}</span>
+                ${renderLiquidFlagHtml(d, 'w-5 h-3.5')}
+                <strong class="font-bold text-icebeam truncate">${escapeHtml(d.country)}</strong>
+              </div>
+              <span class="text-mutedslate text-[11px] block truncate pl-6">${escapeHtml(d.name)}</span>
+            </div>
+            <span class="text-icebeam font-bold shrink-0">${d.score.totalPts}/100</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function updateStandoutPick(key, delegateId) {
+      appState.standouts[key] = delegateId;
+      saveStateToStorage(true);
+      renderTop30View();
+      showToast('Updated leaderboard & synced to Compare');
+    }
+
+    // =========================================================================
+    // 6. VIEW NAVIGATION, FILTERS, COMPARE SYNC & EXPORT/RESET
+    // =========================================================================
+    function toggleMobileNavMenu() {
+      const menu = document.getElementById('mobileNavMenu');
+      const toggle = document.getElementById('mobileNavToggle');
+      if (!menu || !toggle) return;
+      const willOpen = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !willOpen);
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      toggle.setAttribute('aria-label', willOpen ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    document.addEventListener('click', event => {
+      const wrap = document.querySelector('.mobile-nav-menu-wrap');
+      const menu = document.getElementById('mobileNavMenu');
+      const toggle = document.getElementById('mobileNavToggle');
+      if (wrap && menu && toggle && !wrap.contains(event.target)) {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation menu');
+      }
+    });
+
+    function switchView(viewName) {
+      appState.activeView = viewName;
+      ['home', 'score', 'delegate-score', 'top30', 'share'].forEach(name => {
+        const el = document.getElementById(`view-${name}`);
+        if (el) el.classList.toggle('hidden', name !== viewName);
+      });
+
+      const activeNavTab = viewName === 'delegate-score' ? 'score' : viewName;
+      const mobileNavMenu = document.getElementById('mobileNavMenu');
+      const mobileNavToggle = document.getElementById('mobileNavToggle');
+      if (mobileNavMenu) {
+        mobileNavMenu.querySelectorAll('[data-nav-view]').forEach(item => {
+          item.classList.toggle('active', item.dataset.navView === activeNavTab);
+        });
+        mobileNavMenu.classList.add('hidden');
+      }
+      if (mobileNavToggle) {
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+        mobileNavToggle.setAttribute('aria-label', 'Open navigation menu');
+      }
+      const showJudgeAndScore = activeNavTab !== 'home';
+      const nonHomeControls = document.getElementById('nonHomeHeaderControls');
+      if (nonHomeControls) {
+        nonHomeControls.classList.toggle('hidden', !showJudgeAndScore);
+        nonHomeControls.classList.toggle('flex', showJudgeAndScore);
+      }
+
+      ['home', 'score', 'top30', 'share'].forEach(name => {
+        const isSelected = name === activeNavTab;
+        const topBtn = document.getElementById(`topTabBtn-${name}`);
+        if (topBtn) {
+          topBtn.className = isSelected
+            ? 'top-tab-pill top-tab-pill-active'
+            : 'top-tab-pill top-tab-pill-idle';
+          if (isSelected) {
+            topBtn.classList.remove('diamond-nav-glint');
+            void topBtn.offsetWidth;
+            topBtn.classList.add('diamond-nav-glint');
+          }
+        }
+      });
+
+      const controlsBar = document.getElementById('scoreControlsBar');
+      if (controlsBar) controlsBar.classList.toggle('hidden', viewName !== 'score');
+
+      const activeDelegate = viewName === 'delegate-score'
+        ? (DELEGATES.find(d => d.id === String(appState.activeDelegateId)) || DELEGATES[0])
+        : null;
+      syncBackdropsForView(viewName, activeDelegate);
+
+      if (viewName === 'delegate-score') renderDedicatedScoringPage();
+      if (viewName === 'top30') renderTop30View();
+      if (viewName === 'share') renderWatchPartyComparison();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleSearchInput(val) {
+      appState.searchQuery = val;
+      document.getElementById('clearSearchBtn').classList.toggle('hidden', !val);
+      renderDelegatesList();
+    }
+
+    function clearSearchInput() {
+      appState.searchQuery = '';
+      const input = document.getElementById('delegateSearchInput');
+      if (input) input.value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderDelegatesList();
+    }
+
+    function setActiveFilter(filterName) {
+      appState.filter = filterName;
+      document.querySelectorAll('.filter-chip').forEach(btn => {
+        const active = btn.dataset.filter === filterName;
+        btn.className = active
+          ? 'filter-chip px-3 py-1.5 rounded-full text-xs bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35 whitespace-nowrap transition'
+          : 'filter-chip px-3 py-1.5 rounded-full text-xs stage-glass-facet text-mutedslate hover:text-silvermist whitespace-nowrap transition';
+      });
+      renderDelegatesList();
+    }
+
+    function resetSearchAndFilter() {
+      clearSearchInput();
+      setActiveFilter('all');
+    }
+
+    function updateScoredProgressBadge() {
+      const count = DELEGATES.filter(d => getComputedScore(d.id).hasEntry).length;
+      const badge = document.getElementById('scoredProgressText');
+      if (badge) badge.textContent = `${count}/116`;
+    }
+
+    function openJudgeModal() {
+      document.getElementById('judgeNameInput').value = appState.judgeName;
+      document.getElementById('judgeModal').classList.remove('hidden');
+    }
+    function closeJudgeModal() {
+      document.getElementById('judgeModal').classList.add('hidden');
+    }
+    function saveJudgeName() {
+      const val = document.getElementById('judgeNameInput').value.trim();
+      if (val) {
+        appState.judgeName = val;
+        document.getElementById('headerJudgeName').textContent = val;
+        saveStateToStorage(true);
+        if (appState.activeView === 'share') renderWatchPartyComparison();
+        showToast(`Judge set to "${val}" & synced to Compare`);
+      }
+      closeJudgeModal();
+    }
+
+    function switchActiveJudgeProfile(judgeKey) {
+      if (!judgeKey) return;
+      publishCurrentJudgeToComparePool(true);
+      const target = appState.publishedJudges[judgeKey];
+      if (!target) return;
+      appState.judgeName = target.judgeName;
+      appState.scores = deepClone(target.scores || {});
+      appState.standouts = { costume: '', swimsuit: '', gown: '', fanVote: '', ...deepClone(target.standouts || {}) };
+      document.getElementById('headerJudgeName').textContent = appState.judgeName;
+      saveStateToStorage(false);
+      renderDelegatesList();
+      updateScoredProgressBadge();
+      installHorizontalSwipeNavigation(document.getElementById('delegateScoringPageContent'), stepDelegateScoring);
+      installHorizontalSwipeNavigation(document.getElementById('portraitLightboxModal'), stepPortraitLightbox);
+      renderWatchPartyComparison();
+      showToast(`Switched active judge to ${appState.judgeName}`);
+    }
+
+    function createNewJudgeProfile() {
+      const input = document.getElementById('newJudgeProfileInput');
+      const name = (input?.value || '').trim();
+      if (!name) {
+        showToast('Enter a judge name first');
+        return;
+      }
+      publishCurrentJudgeToComparePool(true);
+      appState.judgeName = name;
+      appState.scores = {};
+      appState.standouts = { costume: '', swimsuit: '', gown: '', fanVote: '' };
+      document.getElementById('headerJudgeName').textContent = appState.judgeName;
+      if (input) input.value = '';
+      saveStateToStorage(true);
+      renderDelegatesList();
+      updateScoredProgressBadge();
+      renderWatchPartyComparison();
+      showToast(`Created ballot for ${name}`);
+    }
+
+    function removePublishedJudge(judgeKey) {
+      const targetKey = normalizeJudgeKey(judgeKey);
+      if (!appState.publishedJudges[targetKey]) return;
+      delete appState.publishedJudges[targetKey];
+      saveSharedPoolOnly();
+      if (syncChannel) {
+        try {
+          syncChannel.postMessage({ type: 'pool-updated', updatedAt: Date.now() });
+        } catch (_) {}
+      }
+      renderWatchPartyComparison();
+      showToast('Removed scorecard from Compare');
+    }
+
+    function renderWatchPartyComparison() {
+      const chipsEl = document.getElementById('savedJudgesChips');
+      const container = document.getElementById('watchPartyComparisonContainer');
+      const selectorEl = document.getElementById('compareActiveJudgeSelect');
+      const countBadge = document.getElementById('compareJudgeCountBadge');
+      if (!chipsEl || !container) return;
+
+      const activeKey = normalizeJudgeKey(appState.judgeName);
+      if (!appState.publishedJudges[activeKey]) {
+        appState.publishedJudges[activeKey] = {
+          judgeName: appState.judgeName,
+          updatedAt: new Date().toISOString(),
+          scores: deepClone(appState.scores),
+          standouts: deepClone(appState.standouts)
+        };
+      }
+
+      const entries = Object.entries(appState.publishedJudges).map(([key, ballot]) => {
+        const isActive = key === activeKey;
+        const effectiveScores = isActive ? appState.scores : (ballot.scores || {});
+        const effectiveStandouts = isActive ? appState.standouts : (ballot.standouts || {});
+        const scoredCount = DELEGATES.filter(d => getComputedScoreFromMap(effectiveScores, d.id).hasEntry).length;
+        return {
+          key,
+          judgeName: ballot.judgeName || key,
+          updatedAt: ballot.updatedAt || '',
+          scores: effectiveScores,
+          standouts: effectiveStandouts,
+          scoredCount,
+          isActive
+        };
+      });
+
+      if (countBadge) {
+        countBadge.textContent = `${entries.length} ${entries.length === 1 ? 'Judge' : 'Judges'} Saved`;
+      }
+
+      if (selectorEl) {
+        selectorEl.innerHTML = entries.map(e =>
+          `<option value="${escapeHtml(e.key)}" ${e.isActive ? 'selected' : ''}>${escapeHtml(e.judgeName)} (${e.scoredCount}/116 scored)</option>`
+        ).join('');
+      }
+
+      chipsEl.innerHTML = entries.map(e => `
+        <div class="px-3 py-1.5 rounded-full text-xs flex items-center gap-2 ${e.isActive ? 'bg-gradient-to-r from-cobalt to-sapphire text-silvermist border border-white/35' : 'stage-glass-facet text-icebeam'}">
+          <button type="button" onclick="switchActiveJudgeProfile('${escapeHtml(e.key)}')" class="flex items-center gap-1.5 text-left">
+            <span class="font-semibold">${escapeHtml(e.judgeName)}</span>
+            <span class="text-[10px] opacity-80">(${e.scoredCount}/116)</span>
+          </button>
+          ${!e.isActive ? `<button type="button" onclick="removePublishedJudge('${escapeHtml(e.key)}')" class="text-mutedslate hover:text-rose-300 font-bold" title="Remove">✕</button>` : ''}
+        </div>
+      `).join('');
+
+      const ballotTop30s = entries.map(b => {
+        const sorted = getSortedLeaderboardForBallot(b.scores);
+        const top30 = buildTop30EntriesForBallot(sorted, b.standouts);
+        return {
+          ...b,
+          top30,
+          top30Map: new Map(top30.map((d, idx) => [d.id, { rank: idx + 1, pts: d.score.totalPts }]))
+        };
+      });
+
+      const consensusCounts = new Map();
+      ballotTop30s.forEach(b => {
+        b.top30.forEach((d, idx) => {
+          const prev = consensusCounts.get(d.id) || { delegate: d, picks: 0, rankSum: 0, judges: [] };
+          prev.picks += 1;
+          prev.rankSum += idx + 1;
+          prev.judges.push(`${b.judgeName} (#${idx + 1})`);
+          consensusCounts.set(d.id, prev);
+        });
+      });
+
+      const consensusList = Array.from(consensusCounts.values())
+        .sort((a, b) => (b.picks - a.picks) || (a.rankSum - b.rankSum))
+        .slice(0, 30);
+
+      const primaryTop30Map = ballotTop30s[0]?.top30Map || new Map();
+
+      container.innerHTML = `
+        <div class="stage-glass-facet rounded-xl p-3 space-y-2">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-semibold text-solargold uppercase tracking-wider">
+              ◆ Watch-Party Consensus Top 30 (${entries.length} ${entries.length === 1 ? 'Judge' : 'Judges'})
+            </span>
+            <span class="text-[11px] text-mutedslate">Sorted by most Top 30 picks</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+            ${consensusList.map((item, i) => `
+              <div class="rounded-lg bg-stageabyss/80 border ${item.picks === entries.length && entries.length > 1 ? 'border-solargold/55' : 'border-white/15'} px-2.5 py-1.5 flex items-center justify-between gap-2 text-xs">
+                <div class="flex items-center gap-1.5 min-w-0 truncate">
+                  <span class="font-mono text-cyanbeam">#${i + 1}</span>
+                  ${renderLiquidFlagHtml(item.delegate, 'w-5 h-3.5')}
+                  <strong class="font-bold text-icebeam truncate">${escapeHtml(item.delegate.country)}</strong>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-white/10 text-solargold text-[10px] shrink-0">
+                  ${item.picks}/${entries.length} Top 30
+                </span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          ${ballotTop30s.map((b, colIdx) => `
+            <div class="stage-glass-facet rounded-xl p-3 space-y-1.5">
+              <div class="flex items-center justify-between border-b border-white/15 pb-1.5 gap-2">
+                <span class="text-xs font-semibold text-icebeam truncate">${escapeHtml(b.judgeName)}</span>
+                <span class="text-[10px] text-mutedslate shrink-0">${b.scoredCount}/116 scored • Top 30</span>
+              </div>
+              <div class="max-h-72 overflow-y-auto space-y-1 pr-1">
+                ${b.top30.map((d, idx) => {
+                  const inFirstTop30 = colIdx > 0 && primaryTop30Map.has(d.id);
+                  return `
+                    <div class="flex items-center justify-between gap-2 text-xs py-1 px-2 rounded ${inFirstTop30 ? 'bg-white/10 border border-solargold/35' : 'bg-stagevoid/50'}">
+                      <span class="flex items-center gap-1.5 truncate text-silvermist">
+                        <span class="font-mono text-cyanbeam">#${idx + 1}</span>
+                        ${renderLiquidFlagHtml(d, 'w-5 h-3.5')}
+                        <strong class="font-bold text-icebeam truncate">${escapeHtml(d.country)}</strong>
+                      </span>
+                      <span class="font-mono font-bold text-[11px] text-solargold shrink-0">${d.score.totalPts}</span>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function copyToClipboard(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(successMsg)).catch(() => fallbackCopy(text, successMsg));
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    }
+
+    function fallbackCopy(text, successMsg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (_) {
+        showToast('Copy failed — see output box below');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function exportScoresJson() {
+      const payload = {
+        event: '75th Miss Universe Score Sheet',
+        judgeName: appState.judgeName,
+        exportedAt: new Date().toISOString(),
+        scores: appState.scores,
+        standouts: appState.standouts
+      };
+      const jsonStr = JSON.stringify(payload, null, 2);
+      const box = document.getElementById('shareOutputBox');
+      box.textContent = jsonStr;
+      box.classList.remove('hidden');
+      copyToClipboard(jsonStr, 'JSON scorecard copied');
+    }
+
+    function importFriendScorecard() {
+      const input = document.getElementById('importScorecardInput');
+      if (!input || !input.value.trim()) {
+        showToast('Paste a JSON scorecard first');
+        return;
+      }
+      try {
+        const data = JSON.parse(input.value);
+        applyImportedScorecard(data);
+        input.value = '';
+      } catch (err) {
+        showToast('That JSON could not be read. Please check the copied text.');
+      }
+    }
+
+    async function importFriendScorecardFile(file) {
+      if (!file) return;
+      try {
+        const data = JSON.parse(await file.text());
+        applyImportedScorecard(data);
+      } catch (err) {
+        showToast('That file is not a valid scorecard JSON.');
+      }
+    }
+
+    function applyImportedScorecard(data) {
+      if (!data || typeof data !== 'object' || !data.scores || typeof data.scores !== 'object') {
+        showToast('This file does not contain a valid scorecard.');
+        return;
+      }
+      const name = String(data.judgeName || '').trim();
+      if (!name) {
+        showToast('The scorecard is missing the judge name.');
+        return;
+      }
+      const key = normalizeJudgeKey(name);
+      if (key === normalizeJudgeKey(appState.judgeName)) {
+        showToast('That is your active scorecard. Ask your friend to export theirs.');
+        return;
+      }
+      const validScores = {};
+      for (const delegate of DELEGATES) {
+        const raw = data.scores[delegate.id];
+        if (!raw || typeof raw !== 'object') continue;
+        const clean = {};
+        ['ncCraft','ncStage','swWalk','swConf','swStyle','egGown','egGrace','egGlam'].forEach(field => {
+          if (raw[field] !== undefined) clean[field] = clampNum(raw[field], 0, getFieldMax(field));
+        });
+        if (raw.top30 !== undefined) clean.top30 = Boolean(raw.top30);
+        if (typeof raw.notes === 'string') clean.notes = raw.notes.slice(0, 2000);
+        validScores[delegate.id] = clean;
+      }
+      appState.publishedJudges[key] = {
+        judgeName: name,
+        updatedAt: data.exportedAt || new Date().toISOString(),
+        scores: validScores,
+        standouts: data.standouts && typeof data.standouts === 'object' ? data.standouts : {}
+      };
+      saveSharedPoolOnly();
+      refreshFromSharedStorage();
+      renderWatchPartyComparison();
+      showToast(`${name}'s scorecard added to Compare`);
+    }
+
+    function downloadScoresCsv() {
+      const headers = [
+        'Number', 'Country', 'Delegate', 'Costume_Craft_15', 'Costume_Stage_15', 'Costume_Total_30',
+        'Swim_Walk_15', 'Swim_Conf_15', 'Swim_Style_5', 'Swim_Total_35',
+        'Gown_Design_15', 'Gown_Grace_15', 'Gown_Glam_5', 'Gown_Total_35',
+        'Total_100', 'Top_30_Checked', 'Notes'
+      ];
+      const rows = DELEGATES.map(d => {
+        const s = getComputedScore(d.id);
+        return [
+          d.num, d.country, d.name,
+          s.ncCraft, s.ncStage, s.costumePts,
+          s.swWalk, s.swConf, s.swStyle, s.swimsuitPts,
+          s.egGown, s.egGrace, s.egGlam, s.gownPts,
+          s.totalPts, s.top30 ? 'YES' : 'NO', s.notes
+        ].map(csvEscape).join(',');
+      });
+      const csvContent = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = '75th-miss-universe-scores.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showToast('Downloaded CSV score sheet');
+    }
+
+    function csvEscape(val) {
+      const str = String(val ?? '');
+      if (/[",\n\r]/.test(str)) {
+        return `"${str.replace(/"/g, '""')}"`;
+      }
+      return str;
+    }
+
+    function copyTop30Summary() {
+      const sorted = getSortedLeaderboard();
+      const top30 = buildTop30Entries(sorted);
+      const lines = [
+        `75th Miss Universe — My Top 30 (${appState.judgeName})`,
+        ...top30.map((d, i) => `#${i + 1} ${d.country} (${d.name}) — ${d.score.totalPts}/100 [EG:${d.score.gownPts} SW:${d.score.swimsuitPts}]`)
+      ];
+      copyToClipboard(lines.join('\n'), 'Top 30 summary copied');
+    }
+
+    function resetAllScoresConfirm() {
+      const box = document.getElementById('shareOutputBox');
+      if (box.dataset.confirmReset === 'armed') {
+        appState.scores = {};
+        appState.standouts = { costume: '', swimsuit: '', gown: '', fanVote: '' };
+        box.dataset.confirmReset = '';
+        box.classList.add('hidden');
+        saveStateToStorage(true);
+        renderDelegatesList();
+        updateScoredProgressBadge();
+        if (appState.activeView === 'share') renderWatchPartyComparison();
+        showToast('All scores cleared');
+      } else {
+        box.dataset.confirmReset = 'armed';
+        box.innerHTML = 'Click <strong>Clear My Scores</strong> again to confirm wiping all entered scores, Top 30 checks, and notes.';
+        box.classList.remove('hidden');
+      }
+    }
+
+    // =========================================================================
+    // 7. UTILITIES & INITIALIZATION
+    // =========================================================================
+    let toastTimer = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const label = document.getElementById('toastMessage');
+      label.textContent = msg;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2200);
+    }
+
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function escapeXml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSavedState();
+      renderBrandLogo();
+      document.getElementById('headerJudgeName').textContent = appState.judgeName;
+      renderDelegatesList();
+      updateScoredProgressBadge();
+      document.querySelectorAll('[data-flag-gradient="true"], .mu75-poster-country, #lightboxCountryTitle').forEach(el => {
+        el.classList.add('moving-country-name-gradient');
+      });
+      switchView('home');
+    });
+  </script>
+</body>
+</html>
